@@ -1,0 +1,55 @@
+.header_line {
+    display: block;
+    background: url('/img/header_bgr-d.jpg') repeat-x;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+}
+
+.header_phone, .header_text, .header_city, .select_city {
+    font-family: "Oranienbaum";
+    color: #eee;
+}
+
+.header_phone {
+    font-size: 20pt;    
+    margin-left: 60px;
+}
+
+.header_text {
+    font-size: 10pt;
+    margin-left: 65px;
+}
+
+.header_city {
+    font-size: 12pt;
+    margin: 0 auto;
+}
+
+.head_margin {
+    margin-top: 13px;
+}
+
+.logo {
+    height: 100px;
+    margin-left: 75px;
+    margin-top: 30px;
+}
+
+.link_menu_right a, .link_menu_left a{
+    font-size: 16pt;
+    font-family: "Exo 2";
+    color: #75beb8;
+    text-decoration: none;
+}
+
+.link_menu_left {
+    float: right;
+    text-align: right;
+}
+
+.link_menu_right, .link_menu_left {
+    display: block;
+    margin-top: 40px;
+}
+
