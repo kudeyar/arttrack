@@ -1,19 +1,19 @@
 .header_line {
     display: block;
-    background: url('/img/header_bgr-d.jpg') repeat-x;
+    background: url('/img/footer.png') repeat-x;
     top: 0px;
     width: 100%;
     height: 60px;
 }
 
 .header_phone, .header_text, .header_city, .select_city {
-    font-family: "Oranienbaum";
+    font-family: "Exo 2";
     color: #eee;
 }
 
 .header_phone {
     font-size: 20pt;    
-    margin-left: 60px;
+    margin-left: 50px;
 }
 
 .header_text {
@@ -30,7 +30,7 @@
     margin-top: 13px;
 }
 
-.logo {
+.logo_menu{
     height: 100px;
     margin-left: 75px;
     margin-top: 30px;
@@ -39,9 +39,10 @@
 .link_menu_right a, .link_menu_left a{
     font-size: 16pt;
     font-family: "Exo 2";
-    color: #75beb8;
+    color: #fff687;
     text-decoration: none;
 }
+/*75beb8*/
 
 .link_menu_left {
     float: right;
@@ -53,3 +54,36 @@
     margin-top: 40px;
 }
 
+.menu {
+    font-family: "Exo 2";
+}
+
+.footer {
+    display: block;
+    background: url('/img/footer.png') repeat-x;
+    top: 0px;
+    width: 100%;
+    height: 150px;
+    clear: both;
+    font-family: "Exo 2";
+    color: #fff;
+}
+
+.logo_footer{
+    height: 100px;
+    margin: 15px;
+}
+
+.footer a {
+    color: #fff;
+}
+
+//*******************************************************index.file
+
+.news_block {
+    background: 0,0,0,0.75;
+}
+
+.news_one {
+    background: #e1e1e8;
+}

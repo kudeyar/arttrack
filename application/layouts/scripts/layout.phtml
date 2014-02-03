@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="row head_margin">
                     <div class="span2">
-                        <a href="#" class="btn btn-custom">Мониторинг</a>
+                        <a href="http://178.63.143.252/" class="btn btn-custom" target="_blank">Мониторинг</a>
                     </div>
                     <div class="span4 offset2">
                         <div class="header_phone">8(800) 500-17-14</div>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="span4">
-                    <img src="../img/logo.png" class="logo" />
+                    <img src="../img/logo.png" class="logo_menu" />
                 </div>
                 <div class="span4">
                     <div class="link_menu_right">
@@ -52,8 +52,49 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <?php echo $this->layout()->content ?>
+        </div><!--container*******************************************************-->
+        <!--navbar*******************-->
+        <div class="container menu" style="margin-top: 20px;">
+            <div class="navbar navbar-static navbar-inverse">
+                <nav class="navbar-inner">
+                    <a class="brand" href="#">Кнопка доверия</a>
+                    <ul class="nav">
+                        <li class="divider-vertical"></li>
+                        <li><a href="#">Оборудование</a></li>
+                        <!--<li class="divider-vertical"></li>-->
+                        <li><a href="#">Решения</a></li>
+                        <!--<li class="divider-vertical"></li>-->
+                        <li><a href="#">Получить коммерческое предложение</a></li>
+                        <!--<li class="divider-vertical"></li>-->
+                        <li><a href="#">Заказать звонок</a></li>
+                    </ul>
 
+                </nav>
+            </div>
+        </div><!--end navbar********************************-->
+        <div class="container">
+            <?php echo $this->layout()->content ?>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="span4">
+                        <img src="../img/logo.png" class="logo_footer" /><br />
+                        <span style="margin-left: 15px">Copyright &copy; 2014 | <a href="/">art-track.ru</a></span>
+                    </div>
+                    <div class="span4">
+                        <h4>Контакты</h4>
+                        <p><b>Адрес: </b>355029, Ставропольский край, 
+                                г. Ставрополь, ул. Гражданская, д. 8</p>
+                        <p><b>Телефон/факс: </b>8(8652) 92-17-14</p>
+                        <p><b>E-mail: </b>info@art-track.ru</p>
+                    </div>
+                    <div class="span4">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
