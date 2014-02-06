@@ -9,22 +9,26 @@
         <div class="item active">
             <img src="./img/ban1.jpg">
             <div class="carousel-caption">
-                <h4>title</h4>
-                <p>text text text text </p>
+                <h4>Повышаем эффективность Вашего бизнеса</h4>
+                <p>Снижение нецелевого использования транспорта на 100%
+                    Уменьшение коммуникационных расходов на 50%
+                    Уменьшение амортизации автопарка на 15%
+                    Экономия топлива на предприятии до 50%</p>
             </div>
         </div>
         <div class="item">
             <img src="./img/ban2.png">
             <div class="carousel-caption">
-                <h4>title</h4>
-                <p>text text text text </p>
+                <h4>ГЛОНАСС мониторинг</h4>
+                <p>Оборудование, соответствующее требованиям федерального закона РФ от 14 февраля 2009 г. N 22-ФЗ "О навигационной деятельности". 
+                    Выдача необходимых документов для прохождения лицензирования и технического осмотра.</p>
             </div>
         </div>
         <div class="item">
             <img src="./img/ban3.png">
             <div class="carousel-caption">
-                <h4>title</h4>
-                <p>text text text text </p>
+                <h4>Системы параллельного вождения</h4>
+                <p>Ресурсосберегающие технологии для сельского хозяйства от культовой компании Trimble. Навигация для посева и опрыскивания.</p>
             </div>
         </div>
     </div>
@@ -35,12 +39,12 @@
 <div class="container">
     <div class="news_block" >
         <h3>Новости</h3>
-        <div class=" news_one">
+        <div class="news_one">
             <div style="position: relative;">
                 <img src="./img/news/tamojgnya-planiruet-ispolzovat-glonass.jpg">
                 <div class="photo_title">
                     <p>05.02.2014</p>
-                    <h6>Таможня планирует использовать ГЛОНАСС для отслеживания товаров Таможня планирует использовать ГЛОНАСС для отслеживания товаров</h6>
+                    <h6>Таможня планирует использовать ГЛОНАСС для отслеживания товаров</h6>
                 </div>
             </div>
             <div class="news_text">
@@ -50,13 +54,13 @@
 
             </div>
         </div>
-        <div class=" news_one">
+        <div class="news_one">
             <div style="position: relative;">
                 <img src="./img/news/sistemu-glonass-osvaivayut-artileristy.jpg">
                 <div class="photo_title">
                     <p>05.02.2014</p>
-                    <h6>Систему ГЛОНАСС осваивают российские артиллеристы Систему ГЛОНАСС осваивают российские артиллеристы</h6>
-                    
+                    <h6>Систему ГЛОНАСС осваивают российские артиллеристы</h6>
+
                 </div>
             </div>
             <div class="news_text">
@@ -65,7 +69,7 @@
                 на территории полигона под названием “Прудбой” (Волгоградская область).
             </div>
         </div>
-        <div class=" news_one">
+        <div class="news_one">
             <div style="position: relative;">
                 <img src="./img/news/glonass-pomog-vracham-posle-terakta.jpg">
                 <div class="photo_title">
@@ -82,5 +86,19 @@
     </div>
 </div>
 
+<script>
+    var maxheight = 0;
+    $("div.news_one").each(function() {
+        if ($(this).height() > maxheight) {
+            maxheight = $(this).height()+10;
+        }
+    });
+    $("div.news_one").height(maxheight);
 
+    $(function() {
+        $('.carousel').carousel({
+            interval: 3000
+        });
+    });
+</script>
 

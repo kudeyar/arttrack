@@ -78,8 +78,8 @@
     color: #fff;
 }
 
-/*******************************************/
-.news_block {
+/**********************index*********************/
+.news_block, .text_block {
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
     text-align: center;
@@ -97,6 +97,7 @@
 }
 
 .news_text {
+    display: block;
     padding: 10px;
 }
 
@@ -124,3 +125,24 @@
   margin-bottom: 0;
   font-size: 8pt;
 }
+
+/******************dillers*******************/
+.text_caption {
+    background-color: rgba(225, 225, 232, 0.1);
+    margin: 15px;
+    padding: 15px;
+    text-align: left;
+}
+
+.text_block {
+    padding-bottom: 10px;
+}
+
+.img {
+    margin: 20px 0;
+}
+
+.form_support {
+    margin-left: 50px; 
+}
+/******************end dillers**************************/

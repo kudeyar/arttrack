@@ -12,6 +12,16 @@ class IndexController extends Zend_Controller_Action
     {
         // action body
     }
+    
+    public function dillersAction()
+    {
+        // action body
+    }
+    
+    public function supportAction()
+    {
+        // action body
+    }
 
 
 }

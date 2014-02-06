@@ -43,12 +43,24 @@
                     </div>
                 </div>
                 <div class="span4">
-                    <img src="../img/logo.png" class="logo_menu" />
+                    <a href="/"><img src="../img/logo.png" class="logo_menu" /></a>
                 </div>
                 <div class="span4">
                     <div class="link_menu_right">
-                        <a href="#">Франчайзинг</a><br /><br />
-                        <a href="#">Техподдержка</a>
+                        <a href="<?php
+                        echo $this->url(
+                                array(
+                            'controller' => 'index',
+                            'action'     => 'dillers'
+                                ), 'default', true)
+                        ?>">Франчайзинг</a><br /><br />
+                        <a href="<?php
+                        echo $this->url(
+                                array(
+                            'controller' => 'index',
+                            'action'     => 'support'
+                                ), 'default', true)
+                        ?>">Техподдержка</a>
                     </div>
                 </div>
             </div>
@@ -61,11 +73,17 @@
                     <ul class="nav">
                         <li class="divider-vertical"></li>
                         <li><a href="#">Оборудование</a></li>
-                        <!--<li class="divider-vertical"></li>-->
-                        <li><a href="#">Решения</a></li>
-                        <!--<li class="divider-vertical"></li>-->
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Решения<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Грузоперевозки</a></li>
+                                <li><a href="#">Пассажироперевозки</a></li>
+                                <li><a href="#">Агропромышленный комплекс</a></li>
+                                <li><a href="#">Дистрибьюция и логистика</a></li>
+                                <li><a href="#">Лизинг</a></li>
+                                <li><a href="#">Мобильные сотрудники</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Получить коммерческое предложение</a></li>
-                        <!--<li class="divider-vertical"></li>-->
                         <li><a href="#">Заказать звонок</a></li>
                     </ul>
 
@@ -75,24 +93,24 @@
         <div class="container">
             <?php echo $this->layout()->content ?>
         </div>
-        
-<!--***********footer-->
+
+        <!--***********footer-->
         <div class="footer">
             <div class="container">
                 <div class="row">
                     <div class="span4">
-                        <img src="../img/logo.png" class="logo_footer" /><br />
+                        <a href="/"><img src="../img/logo.png" class="logo_footer" /></a><br />
                         <span style="margin-left: 15px">Copyright &copy; 2014 | <a href="/">art-track.ru</a></span>
                     </div>
                     <div class="span4">
                         <h4>Контакты</h4>
                         <p><b>Адрес: </b>355029, Ставропольский край, 
-                                г. Ставрополь, ул. Гражданская, д. 8</p>
+                            г. Ставрополь, ул. Гражданская, д. 8</p>
                         <p><b>Телефон/факс: </b>8(8652) 92-17-14</p>
                         <p><b>E-mail: </b>info@art-track.ru</p>
                     </div>
                     <div class="span4">
-                        
+
                     </div>
                 </div>
             </div>
