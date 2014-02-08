@@ -1,29 +1,45 @@
+@font-face {
+    font-family: Myriad Pro; /* Имя шрифта */
+    src: url(/fonts/myriadpro-cond.ttf); /* Путь к файлу со шрифтом */
+}
+
 .header_line {
     display: block;
-    background: url('/img/footer.png') repeat-x;
+    background: url('/img/header_bgr-d.jpg') repeat-x;
     top: 0px;
     width: 100%;
-    height: 60px;
+    height: 65px;
 }
 
 .header_phone, .header_text, .header_city, .select_city {
-    font-family: "Exo 2";
+    font-family: "Myriad Pro";
     color: #eee;
 }
 
 .header_phone {
-    font-size: 20pt;    
-    margin-left: 50px;
+    font-size: 40pt;    
+    margin-left: 10px;
 }
 
 .header_text {
-    font-size: 10pt;
-    margin-left: 65px;
+    font-size: 12pt;
+    margin-left: 40px;
+    margin-top: 10px;
+    letter-spacing: 3px;
 }
 
 .header_city {
-    font-size: 12pt;
+    font-size: 18pt;
     margin: 0 auto;
+}
+
+.select_city a{
+    color: #eee;
+    font-size: 14pt;
+}
+
+.select_city a:hover{
+    color: #eee;
 }
 
 .head_margin {
@@ -39,7 +55,7 @@
 .link_menu_right a, .link_menu_left a{
     font-size: 16pt;
     font-family: "Exo 2";
-    color: #fff687;
+    color: #333333;
     text-decoration: none;
 }
 /*75beb8*/
@@ -55,18 +71,20 @@
 }
 
 .menu {
-    font-family: "Exo 2";
+    font-family: "Myriad Pro";
+    font-size: 15pt;
 }
 
 .footer {
     display: block;
-    background: url('/img/footer.png') repeat-x;
+    background: url('/img/footer.jpg') repeat-x;
     top: 0px;
     width: 100%;
-    height: 150px;
+    height: 200px;
     clear: both;
-    font-family: "Exo 2";
+    font-family: "Myriad Pro";
     color: #fff;
+    font-size: 16pt;
 }
 
 .logo_footer{
@@ -80,20 +98,45 @@
 
 /**********************index*********************/
 .news_block, .text_block {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
+    color: #333333;
     text-align: center;
-    font-family: "Exo 2";
     margin-bottom: 20px;
 }
 
 .news_one {
     display: inline-block;
-    width: 280px;
-    background-color: rgba(225, 225, 232, 0.1);
+    width: 232px;
+    background: transparent;
     text-align: left;
-    margin: 10px;
     vertical-align: top;
+    /* Webkit (Safari/Chrome) */ -webkit-box-shadow: 0px 4px 5px 0px #CCCCCC;
+    /* Mozilla Firefox */ -moz-box-shadow: 0px 4px 5px 0px #CCCCCC;
+    /* Proposed W3C Markup */ box-shadow: 0px 4px 5px 0px #CCCCCC;
+}
+
+.news_one .img_n {
+    width: auto;
+    height: 170px;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+.title {
+    font-size: 20pt;
+    font-family: "Myriad Pro";
+}
+
+.news_block a {
+    color: #333333;
+}
+
+.news_block a:hover {
+    display: inline-block;
+    /* Webkit (Safari/Chrome) */ -webkit-box-shadow: 0px 4px 5px 2px #CCCCCC;
+    /* Mozilla Firefox */ -moz-box-shadow: 0px 4px 5px 2px #CCCCCC;
+    /* Proposed W3C Markup */ box-shadow: 0px 4px 5px 2px #CCCCCC;
 }
 
 .news_text {
@@ -102,36 +145,40 @@
 }
 
 .photo_title {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 5px;
-  background: #333333;
-  background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    background: #333333;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.photo_title h4,
+.photo_title h6,
 .photo_title p {
-  line-height: 10px;
-  color: #ffffff;
+    line-height: 10px;
+    color: #ffffff;
 }
 
 .photo_title h4 {
-  margin: 0 0 5px;
+    margin: 0 0 5px;
 }
 
 .photo_title p {
-  margin-bottom: 0;
-  font-size: 8pt;
+    margin-bottom: 0;
+    font-size: 8pt;
 }
 
 /******************dillers*******************/
 .text_caption {
-    background-color: rgba(225, 225, 232, 0.1);
-    margin: 15px;
+    margin: 15px 0;
     padding: 15px;
+    display: inline-block;
+    background: transparent;
     text-align: left;
+    /* Webkit (Safari/Chrome) */ -webkit-box-shadow: 0px 4px 5px 0px #CCCCCC;
+    /* Mozilla Firefox */ -moz-box-shadow: 0px 4px 5px 0px #CCCCCC;
+    /* Proposed W3C Markup */ box-shadow: 0px 4px 5px 0px #CCCCCC;
 }
 
 .text_block {
