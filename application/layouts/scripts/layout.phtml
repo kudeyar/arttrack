@@ -8,6 +8,8 @@
         <script src="/js/bootstrap.min.js"></script>
         <?php echo $this->headLink()->appendStylesheet('/css/bootstrap.min.css') ?> 
         <?php echo $this->headLink()->appendStylesheet('/css/style.css') ?>        
+        <!-- Стили для всех версий IE -->
+        <!--[if IE]><link rel="stylesheet" type="text/css" href="/css/ie.css" media="all"/><![endif]-->
         <link href='http://fonts.googleapis.com/css?family=Oranienbaum' rel='stylesheet' type='text/css'>
             <link href='http://fonts.googleapis.com/css?family=Exo+2&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
     </head>
@@ -26,8 +28,8 @@
                     <div class="span3 offset1">
                         <div class="row">
                             <div class="span1"><img src="/img/mini_map.png"></div>
-                            <div class="span2"><span class="header_city">Ваш город:</span> 
-                                <a href="#" class="select_city">Ставрополь</a></div>
+                            <div class="span2 select_city"><span class="header_city">Ваш город:</span> 
+                                <a href="#">Ставрополь</a></div>
                         </div>
                     </div>
                 </div>
@@ -99,11 +101,11 @@
             <div class="container">
                 <div class="row">
                     <div class="span4">
-                        <a href="/"><img src="../img/logo.png" class="logo_footer" /></a><br />
+                        <a href="/"><img src="../img/logo_footer.png" class="logo_footer" /></a><br />
                         <span style="margin-left: 15px">Copyright &copy; 2014 | <a href="/">art-track.ru</a></span>
                     </div>
                     <div class="span4">
-                        <h4>Контакты</h4>
+                        <h3>Контакты</h3>
                         <p><b>Адрес: </b>355029, Ставропольский край, 
                             г. Ставрополь, ул. Гражданская, д. 8</p>
                         <p><b>Телефон/факс: </b>8(8652) 92-17-14</p>

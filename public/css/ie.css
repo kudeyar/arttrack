@@ -1,0 +1,66 @@
+@font-face {
+    font-family: Myriad Pro; /* Имя шрифта */
+    src: url(/fonts/myriadpro-cond.ttf); /* Путь к файлу со шрифтом */
+}
+
+.header_phone, .header_text, .header_city, .select_city {
+    font-family: "Myriad Pro";
+    color: #eee;
+}
+
+.header_phone {
+    font-size: 25pt;    
+    margin-left: 10px;
+    line-height: 26px;
+}
+
+.header_text {
+    font-size: 9pt;
+    margin-left: 10px;
+    margin-top: 5px;
+    letter-spacing: 3px;
+}
+
+.header_city {
+    font-size: 13pt;
+}
+
+.select_city a{
+    color: #eee;
+    font-size: 13pt;
+}
+
+.menu {
+    font-size: 11pt;
+}
+
+.footer {
+    font-size: 11pt;
+}
+
+/*index*/
+.news_one {
+    zoom: 1;
+    display: inline;
+    width: 230px;
+    background: #eee;
+    text-align: left;
+    vertical-align: top;
+    margin: 2px;
+}
+
+.news_one .img_n {
+    width: auto;
+    height: 170px;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+.news_block a:hover {
+    zoom: 1;
+    display: inline;
+    cursor: pointer;
+    text-decoration: none;
+}
