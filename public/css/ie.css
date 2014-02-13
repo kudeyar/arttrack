@@ -40,27 +40,69 @@
 
 /*index*/
 .news_one {
-    zoom: 1;
-    display: inline;
-    width: 230px;
+    display: block;
+    width: auto;
     background: #eee;
     text-align: left;
     vertical-align: top;
-    margin: 2px;
 }
 
 .news_one .img_n {
-    width: auto;
+    width: 250px;
     height: 170px;
     max-width: 100%;
     vertical-align: middle;
     border: 0;
+    display: inline;
+    float: left;
+    padding-right: 20px;
     -ms-interpolation-mode: bicubic;
 }
 
+.title {
+    font-size: 20pt;
+    font-family: "Myriad Pro";
+}
+
+.news_block a {
+    color: #333333;
+}
+
 .news_block a:hover {
-    zoom: 1;
-    display: inline;
-    cursor: pointer;
     text-decoration: none;
+    display: block;
+    cursor: pointer;
+    color: #003bb3;
+}
+
+.news_text {
+    display: block;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.photo_title {
+    position: absolute;
+    display: block;
+    margin-left: 250px;
+    top: 0px;
+    height: 50px;
+    padding: 5px;
+    background: #d4d4d4;
+}
+
+.photo_title h6,
+.photo_title p {
+    line-height: 10px;
+    color: #333333;
+    font-size: 10pt;
+}
+
+.photo_title h4 {
+    margin: 0 0 10px;
+}
+
+.photo_title p {
+    margin-bottom: 0;
+    font-size: 8pt;
 }
