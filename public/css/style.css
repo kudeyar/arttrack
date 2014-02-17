@@ -3,6 +3,24 @@
     src: url(/fonts/myriadpro-cond.ttf); /* Путь к файлу со шрифтом */
 }
 
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -200px;
+}
+
+.push {
+    height: 200px;
+}
+
 .header_line {
     display: block;
     background: url('/img/header_bgr-d.jpg') repeat-x;
@@ -132,7 +150,7 @@
     color: #333333;
 }
 
-.news_block a:hover {
+.news_one:hover {
     display: inline-block;
     /* Webkit (Safari/Chrome) */ -webkit-box-shadow: 0px 4px 5px 2px #CCCCCC;
     /* Mozilla Firefox */ -moz-box-shadow: 0px 4px 5px 2px #CCCCCC;
@@ -181,6 +199,10 @@
     /* Proposed W3C Markup */ box-shadow: 0px 4px 5px 0px #CCCCCC;
 }
 
+.text_caption a{
+    color: #333333;
+}
+
 .text_block {
     padding-bottom: 10px;
 }
@@ -193,3 +215,20 @@
     margin-left: 50px; 
 }
 /******************end dillers**************************/
+
+/*********equipment**********/
+.marker {
+    list-style-image: url("/img/li-style.png");
+}
+
+.img_eq {
+    display: block;
+    clear: both;
+    margin: 10px auto;
+}
+
+.form_call{
+    padding: 10px;
+}
+
+/*********endequipment**********/

@@ -1,99 +1,200 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ART-TRACK</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
         <?php echo $this->headLink()->appendStylesheet('/css/bootstrap.min.css') ?> 
         <?php echo $this->headLink()->appendStylesheet('/css/style.css') ?>        
         <!-- Стили для всех версий IE -->
         <!--[if IE]><link rel="stylesheet" type="text/css" href="/css/ie.css" media="all"/><![endif]-->
-        <link href='http://fonts.googleapis.com/css?family=Oranienbaum' rel='stylesheet' type='text/css'>
-            <link href='http://fonts.googleapis.com/css?family=Exo+2&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Exo+2&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
     </head>
 
     <body>
-        <div class="header_line">
+        <div class="wrapper">
+            <div class="header_line">
+                <div class="container">
+                    <div class="row head_margin">
+                        <div class="span2">
+                            <a href="http://178.63.143.252/" class="btn btn-custom" target="_blank">Мониторинг</a>
+                        </div>
+                        <div class="span4 offset2">
+                            <div class="header_phone">8(800) 500-17-14</div>
+                            <div class="header_text">Звонок по России бесплатный</div>
+                        </div>
+                        <div class="span3 offset1">
+                            <div class="row">
+                                <div class="span1"><img src="/img/mini_map.png"></div>
+                                <div class="span2 select_city"><span class="header_city">Ваш город:</span> 
+                                    <a href="#">Ставрополь</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--container-->
+            </div><!--header_line-->
+            <!--*************************************************************end header line-->
             <div class="container">
-                <div class="row head_margin">
-                    <div class="span2">
-                        <a href="http://178.63.143.252/" class="btn btn-custom" target="_blank">Мониторинг</a>
+                <div class="row header_opacity">
+                    <div class="span4">
+                        <div class="link_menu_left">
+                            <a href="<?php
+                            echo $this->url(
+                                    array(
+                                'controller' => 'index',
+                                'action'     => 'about'
+                                    ), 'default', true)
+                            ?>">О компании</a><br /><br />
+                            <a href="#">Новости</a>
+                        </div>
                     </div>
-                    <div class="span4 offset2">
-                        <div class="header_phone">8(800) 500-17-14</div>
-                        <div class="header_text">Звонок по России бесплатный</div>
+                    <div class="span4">
+                        <a href="/"><img src="../img/logo.png" class="logo_menu" /></a>
                     </div>
-                    <div class="span3 offset1">
-                        <div class="row">
-                            <div class="span1"><img src="/img/mini_map.png"></div>
-                            <div class="span2 select_city"><span class="header_city">Ваш город:</span> 
-                                <a href="#">Ставрополь</a></div>
+                    <div class="span4">
+                        <div class="link_menu_right">
+                            <a href="<?php
+                            echo $this->url(
+                                    array(
+                                'controller' => 'index',
+                                'action'     => 'dillers'
+                                    ), 'default', true)
+                            ?>">Франчайзинг</a><br /><br />
+                            <a href="<?php
+                            echo $this->url(
+                                    array(
+                                'controller' => 'index',
+                                'action'     => 'support'
+                                    ), 'default', true)
+                            ?>">Техподдержка</a>
                         </div>
                     </div>
                 </div>
-            </div><!--container-->
-        </div><!--header_line-->
-        <!--*************************************************************end header line-->
-        <div class="container">
-            <div class="row header_opacity">
-                <div class="span4">
-                    <div class="link_menu_left">
-                        <a href="#">О компании</a><br /><br />
-                        <a href="#">Новости</a>
-                    </div>
-                </div>
-                <div class="span4">
-                    <a href="/"><img src="../img/logo.png" class="logo_menu" /></a>
-                </div>
-                <div class="span4">
-                    <div class="link_menu_right">
-                        <a href="<?php
-                        echo $this->url(
-                                array(
-                            'controller' => 'index',
-                            'action'     => 'dillers'
-                                ), 'default', true)
-                        ?>">Франчайзинг</a><br /><br />
-                        <a href="<?php
-                        echo $this->url(
-                                array(
-                            'controller' => 'index',
-                            'action'     => 'support'
-                                ), 'default', true)
-                        ?>">Техподдержка</a>
-                    </div>
-                </div>
-            </div>
-        </div><!--container*******************************************************-->
-        <!--navbar*******************-->
-        <div class="container menu" style="margin-top: 20px;">
-            <div class="navbar navbar-static navbar-inverse">
-                <nav class="navbar-inner">
-                    <a class="brand btn-custom" href="#">Кнопка доверия</a>
-                    <ul class="nav">
-                        <li class="divider-vertical"></li>
-                        <li><a href="#">Оборудование</a></li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Решения<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Грузоперевозки</a></li>
-                                <li><a href="#">Пассажироперевозки</a></li>
-                                <li><a href="#">Агропромышленный комплекс</a></li>
-                                <li><a href="#">Дистрибьюция и логистика</a></li>
-                                <li><a href="#">Лизинг</a></li>
-                                <li><a href="#">Мобильные сотрудники</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Получить коммерческое предложение</a></li>
-                        <li><a href="#">Заказать звонок</a></li>
-                    </ul>
+            </div><!--container*******************************************************-->
+            <!--navbar*******************-->
+            <div class="container menu" style="margin-top: 20px;">
+                <div class="navbar navbar-static navbar-inverse">
+                    <nav class="navbar-inner">
+                        <a class="brand btn-custom" href="#">Кнопка доверия</a>
+                        <ul class="nav">
+                            <li class="divider-vertical"></li>
+                            <li><a href="#">Оборудование</a></li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Решения<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php
+                                        echo $this->url(
+                                                array(
+                                            'controller' => 'industry',
+                                            'action'     => 'gruzoperevozki'
+                                                ), 'default', true)
+                                        ?>">Грузоперевозки</a></li>
+                                    <li><a href="<?php
+                                        echo $this->url(
+                                                array(
+                                            'controller' => 'industry',
+                                            'action'     => 'passazhir'
+                                                ), 'default', true)
+                                        ?>">Пассажироперевозки</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a href="<?php
+                                        echo $this->url(
+                                                array(
+                                            'controller' => 'industry',
+                                            'action'     => 'apk'
+                                                ), 'default', true)
+                                        ?>">Агропромышленный комплекс</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="<?php
+                                                echo $this->url(
+                                                        array(
+                                                    'controller' => 'industry',
+                                                    'action'     => 'parallels'
+                                                        ), 'default', true)
+                                                ?>">Параллельное вождение</a></li>
+                                            <li><a href="<?php
+                                                echo $this->url(
+                                                        array(
+                                                    'controller' => 'industry',
+                                                    'action'     => 'kursor'
+                                                        ), 'default', true)
+                                                ?>">Курсоуказатели</a></li>
+                                            <li><a href="<?php
+                                                echo $this->url(
+                                                        array(
+                                                    'controller' => 'industry',
+                                                    'action'     => 'pastuh'
+                                                        ), 'default', true)
+                                                ?>">Электропастух</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="<?php
+                                        echo $this->url(
+                                                array(
+                                            'controller' => 'industry',
+                                            'action'     => 'logistic'
+                                                ), 'default', true)
+                                        ?>">Дистрибьюция и логистика</a></li>
+                                    <li><a href="<?php
+                                        echo $this->url(
+                                                array(
+                                            'controller' => 'industry',
+                                            'action'     => 'lizing'
+                                                ), 'default', true)
+                                        ?>">Лизинг</a></li>
+                                    <li><a href="<?php
+                                        echo $this->url(
+                                                array(
+                                            'controller' => 'industry',
+                                            'action'     => 'mobile'
+                                                ), 'default', true)
+                                        ?>">Мобильные сотрудники</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Получить коммерческое предложение</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="form_call">
+                                            <form method="POST">
+                                                <!--[if IE]><label>Ваше имя</label><![endif]-->
+                                                <input type="text" class="input-xlarge" placeholder="Ваше имя" required />
+                                                <!--[if IE]><label>Ваш e-mail</label><![endif]-->
+                                                <input type="email" class="input-xlarge" placeholder="Ваш e-mail" required />
+                                                <button type="submit" class="btn btn-custom">Получить</button>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Заказать звонок</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="form_call">
+                                            <form method="POST">
+                                                <!--[if IE]><label>Ваше имя</label><![endif]-->
+                                                <input type="text" placeholder="Ваше имя" required />
+                                                <!--[if IE]><label>Ваш город</label><![endif]-->
+                                                <input type="text" placeholder="Ваш город" required />
+                                                <!--[if IE]><label>Ваш телефон</label><![endif]-->
+                                                <input type="tel" placeholder="Ваш телефон" required />
+                                                <!--[if IE]><label>Ваш звонить</label><![endif]-->
+                                                <input type="text" placeholder="Когда звонить" required />
+                                                <button type="submit" class="btn btn-custom">Заказать</button>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                </nav>
-            </div>
-        </div><!--end navbar********************************-->
-        <div class="container">
-            <?php echo $this->layout()->content ?>
+                    </nav>
+                </div>
+            </div><!--end navbar********************************-->
+
+            <div class="container">
+                <?php echo $this->layout()->content ?>
+            </div><div class="push"></div>
         </div>
 
         <!--***********footer-->
@@ -117,5 +218,8 @@
                 </div>
             </div>
         </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
     </body>
 </html>

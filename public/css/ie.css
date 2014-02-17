@@ -106,3 +106,12 @@
     margin-bottom: 0;
     font-size: 8pt;
 }
+
+.tab-pane {
+    overflow: hidden;
+}
+
+.menu {
+    background: #000;
+    margin-bottom: 10px;
+}
