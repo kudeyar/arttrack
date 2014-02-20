@@ -34,7 +34,7 @@
                 </div><!--container-->
             </div><!--header_line-->
             <!--*************************************************************end header line-->
-            <div class="container">
+            <div class="container back_logo">
                 <div class="row header_opacity">
                     <div class="span4">
                         <div class="link_menu_left">
@@ -44,8 +44,8 @@
                                 'controller' => 'index',
                                 'action'     => 'about'
                                     ), 'default', true)
-                            ?>">О компании</a><br /><br />
-                            <a href="#">Новости</a>
+                                    ?>">О компании</a><div class="main_menu_line"></div><br />
+                            <a href="#">Новости</a><div class="main_menu_line"></div>
                         </div>
                     </div>
                     <div class="span4">
@@ -59,14 +59,14 @@
                                 'controller' => 'index',
                                 'action'     => 'dillers'
                                     ), 'default', true)
-                            ?>">Франчайзинг</a><br /><br />
+                            ?>">Франчайзинг</a><div class="main_menu_line"></div><br />
                             <a href="<?php
                             echo $this->url(
                                     array(
                                 'controller' => 'index',
                                 'action'     => 'support'
                                     ), 'default', true)
-                            ?>">Техподдержка</a>
+                            ?>">Техподдержка</a><div class="main_menu_line"></div>
                         </div>
                     </div>
                 </div>

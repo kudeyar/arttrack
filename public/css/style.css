@@ -64,6 +64,16 @@ html, body {
     margin-top: 13px;
 }
 
+.back_logo{
+    /*background: url('/img/setka.png');*/
+}
+
+.main_menu_line{
+    background: url('/img/line.png');
+    height: 1px;
+    width: 290px;
+}
+
 .logo_menu{
     height: 100px;
     margin-left: 75px;
