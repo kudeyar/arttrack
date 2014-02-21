@@ -65,7 +65,8 @@ html, body {
 }
 
 .back_logo{
-    /*background: url('/img/setka.png');*/
+    background: url('/img/setka.png');
+    background-position: inherit;
 }
 
 .main_menu_line{
