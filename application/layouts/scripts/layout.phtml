@@ -10,6 +10,7 @@
         <!-- Стили для всех версий IE -->
         <!--[if IE]><link rel="stylesheet" type="text/css" href="/css/ie.css" media="all"/><![endif]-->
         <link href='http://fonts.googleapis.com/css?family=Exo+2&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
@@ -18,7 +19,7 @@
                 <div class="container">
                     <div class="row head_margin">
                         <div class="span2">
-                            <a href="http://178.63.143.252/" class="btn btn-custom" target="_blank">Мониторинг</a>
+                            <a href="http://178.63.143.252/" class="button_s" target="_blank">Мониторинг</a>
                         </div>
                         <div class="span4 offset2">
                             <div class="header_phone">8(800) 500-17-14</div>
@@ -97,8 +98,8 @@
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
-                                            'controller' => 'industry',
-                                            'action' => 'passazhir'
+                                            'controller' => 'equipment',
+                                            'action' => 'tracker'
                                                 ), 'default', true)
                                         ?>">GPS/ГЛОНАСС оборудование</a></li>
 
@@ -247,6 +248,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li><a href="#">Помощь</a></li>
                         </ul>
 
                     </nav>
