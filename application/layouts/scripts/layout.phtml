@@ -77,15 +77,14 @@
             <div class="container menu" style="margin-top: 20px;">
                 <div class="navbar navbar-static navbar-inverse">
                     <nav class="navbar-inner">
-                        <a class="brand btn-custom" href="<?php
-                        echo $this->url(
-                                array(
-                            'controller' => 'index',
-                            'action' => 'helpbutton'
-                                ), 'default', true)
-                        ?>">Кнопка доверия</a>
                         <ul class="nav">
-                            <li class="divider-vertical"></li>
+                            <li class="but_help"><a href="<?php
+                                echo $this->url(
+                                        array(
+                                    'controller' => 'index',
+                                    'action' => 'helpbutton'
+                                        ), 'default', true)
+                                ?>" style="color: #fff;">Кнопка доверия</a></li>
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Оборудование<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="<?php
@@ -106,36 +105,36 @@
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
-                                            'controller' => 'industry',
-                                            'action' => 'logistic'
+                                            'controller' => 'equipment',
+                                            'action' => 'dut'
                                                 ), 'default', true)
                                         ?>">Датчики уровня топлива (ДУТ)</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
-                                            'controller' => 'industry',
-                                            'action' => 'lizing'
+                                            'controller' => 'equipment',
+                                            'action' => 'mayak'
                                                 ), 'default', true)
                                         ?>">GPS маяки</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
-                                            'controller' => 'industry',
-                                            'action' => 'mobile'
+                                            'controller' => 'equipment',
+                                            'action' => 'kursoroukazatel'
                                                 ), 'default', true)
                                         ?>">Курсоуказатели</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
-                                            'controller' => 'industry',
-                                            'action' => 'mobile'
+                                            'controller' => 'equipment',
+                                            'action' => 'tachograph'
                                                 ), 'default', true)
                                         ?>">Тахографы</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
-                                            'controller' => 'industry',
-                                            'action' => 'mobile'
+                                            'controller' => 'equipment',
+                                            'action' => 'options'
                                                 ), 'default', true)
                                         ?>">Отдельные опции</a></li>
                                 </ul>
@@ -222,7 +221,7 @@
                                                 <input type="text" class="input-xlarge" placeholder="Ваше имя" required />
                                                 <!--[if IE]><label>Ваш e-mail</label><![endif]-->
                                                 <input type="email" class="input-xlarge" placeholder="Ваш e-mail" required />
-                                                <button type="submit" class="btn btn-custom">Получить</button>
+                                                <a href="#" class="button_s">Получить</a>
                                             </form>
                                         </div>
                                     </li>
@@ -242,13 +241,46 @@
                                                 <input type="tel" placeholder="Ваш телефон" required />
                                                 <!--[if IE]><label>Ваш звонить</label><![endif]-->
                                                 <input type="text" placeholder="Когда звонить" required />
-                                                <button type="submit" class="btn btn-custom">Заказать</button>
+                                                <a href="#" class="button_s">Заказать</a>
                                             </form>
                                         </div>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="#">Помощь</a></li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Помощь<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="http://wialonb3.gurtam.com/login_action.html?user=wialon_test&passw=test&action=login&skip_auto=1&lang=ru&sid=cb33c361be9a0a82d7655e4e228cbf90" target="_blank">Демо доступ</a></li>
+                                    <li><a href="<?php
+                                        echo $this->url(
+                                                array(
+                                            'controller' => 'help',
+                                            'action' => 'howwork'
+                                                ), 'default', true)
+                                        ?>">Как это работает</a></li>
+
+                                    <li><a href="<?php
+                                        echo $this->url(
+                                                array(
+                                            'controller' => 'help',
+                                            'action' => 'econom'
+                                                ), 'default', true)
+                                        ?>">Экономический эффект</a></li>
+                                    <li><a href="<?php
+                                        echo $this->url(
+                                                array(
+                                            'controller' => 'help',
+                                            'action' => 'wialonstart'
+                                                ), 'default', true)
+                                        ?>">Wialon: Начало</a></li>
+                                    <li><a href="<?php
+                                        echo $this->url(
+                                                array(
+                                            'controller' => 'help',
+                                            'action' => 'faq'
+                                                ), 'default', true)
+                                        ?>">F.A.Q.</a></li>                                    
+                                </ul>
+                            </li>
                         </ul>
 
                     </nav>

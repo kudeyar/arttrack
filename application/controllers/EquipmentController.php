@@ -18,6 +18,31 @@ class EquipmentController extends Zend_Controller_Action
         // action body
     }
     
+    public function dutAction()
+    {
+        // action body
+    }
+    
+    public function mayakAction()
+    {
+        // action body
+    }
+    
+    public function kursoroukazatelAction()
+    {
+        // action body
+    }
+    
+    public function tachographAction()
+    {
+        // action body
+    }
+    
+    public function optionsAction()
+    {
+        // action body
+    }
+    
     
 }
 
