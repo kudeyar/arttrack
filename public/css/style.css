@@ -75,7 +75,7 @@ h3, h4, h5 {
 }
 
 .back_logo{
-    background: url('/img/setka.png');
+    background: url('/img/setka1.png');
     background-position: inherit;
 }
 
@@ -109,7 +109,7 @@ h3, h4, h5 {
     margin-top: 40px;
 }
 
-.menu {
+.menu1 {
     font-family: "Myriad Pro";
     font-size: 15pt;
 }
@@ -254,9 +254,8 @@ h3, h4, h5 {
     margin: 20px 0;
 }
 
-.img2x2 {
-    width: 150px;
-    height: 150px;
+.img_view {
+    width: 300px;
     float: left;
     margin: 0 10px 10px 10px;
 }

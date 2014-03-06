@@ -43,6 +43,50 @@ class EquipmentController extends Zend_Controller_Action
         // action body
     }
     
+    public function dut1Action()
+    {
+        // action body
+    }
+    
+    public function dut2Action()
+    {
+        // action body
+    }
+    
+    public function dut3Action()
+    {
+        // action body
+    }
+    
+    public function kursoroukazatel1Action()
+    {
+        // action body
+    }
+    
+    public function kursoroukazatel2Action()
+    {
+        // action body
+    }
+    
+    public function kursoroukazatel3Action()
+    {
+        // action body
+    }
+    
+    public function mayak1Action()
+    {
+        // action body
+    }
+    
+    public function mayak2Action()
+    {
+        // action body
+    }
+    
+    public function mayak3Action()
+    {
+        // action body
+    }
     
 }
 
