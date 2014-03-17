@@ -88,5 +88,20 @@ class EquipmentController extends Zend_Controller_Action
         // action body
     }
     
+    public function tachograph1Action()
+    {
+        // action body
+    }
+    
+    public function tachograph2Action()
+    {
+        // action body
+    }
+    
+    public function tachograph3Action()
+    {
+        // action body
+    }
+    
 }
 
