@@ -237,6 +237,7 @@ h3, h4, h5 {
     display: inline-block;
     background: transparent;
     text-align: left;
+    width: 910px;
     /* Webkit (Safari/Chrome) */ -webkit-box-shadow: 0px 4px 5px 0px #CCCCCC;
     /* Mozilla Firefox */ -moz-box-shadow: 0px 4px 5px 0px #CCCCCC;
     /* Proposed W3C Markup */ box-shadow: 0px 4px 5px 0px #CCCCCC;
@@ -405,3 +406,93 @@ h3, h4, h5 {
     color: white;
 }
 /*end equipment*/
+
+/*help*/
+
+.howwork {
+    background: url(/img/shema-kontr-avto.jpg);
+    width: 700px;
+    height: 450px;
+    display: block;
+    position: relative;
+    margin: 10px;
+}
+
+.how_glonass {
+    display: block;
+    position: absolute;
+    top: 79px;
+    left: 126px;
+}
+
+.how_gsm{
+    display: block;
+    position: absolute;
+    top: 74px;
+    left: 276px;
+}
+
+.how_monitor{
+    display: block;
+    position: absolute;
+    top: 164px;
+    left: 230px;
+    z-index: 999;
+}
+
+.how_board{
+    display: block;
+    position: absolute;
+    top: 184px;
+    left: 281px;
+}
+
+.how_plant{
+    display: block;
+    position: absolute;
+    top: 250px;
+    left: 270px;
+}
+
+.how_couch{
+    display: block;
+    position: absolute;
+    top: 288px;
+    left: 231px;
+}
+
+.how_glonass, .how_gsm, .how_monitor, .how_board, .how_plant, .how_couch :hover {
+    cursor: pointer;
+}
+
+.howglonass_text, .howgsm_text, .howmonitor_text, .howboard_text, .howplant_text, .howcouch_text{
+    display: none;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    height: 20px;
+    -moz-border-radius-topleft: 100px;
+    -moz-border-radius-topright:100px;
+    -moz-border-radius-bottomleft:100px;
+    -moz-border-radius-bottomright:100px;
+    -webkit-border-top-left-radius:100px;
+    -webkit-border-top-right-radius:100px;
+    -webkit-border-bottom-left-radius:100px;
+    -webkit-border-bottom-right-radius:100px;
+    border-top-left-radius:100px;
+    border-top-right-radius:100px;
+    border-bottom-left-radius:100px;
+    border-bottom-right-radius:100px;
+    padding: 5px;
+}
+
+.slowtogle {
+    /* Webkit (Safari/Chrome) */ -webkit-box-shadow: 0px 0px 7px 4px #CCCCCC;
+    /* Mozilla Firefox */ -moz-box-shadow: 0px 0px 7px 4px #CCCCCC;
+    /* Proposed W3C Markup */ box-shadow: 0px 0px 7px 4px #CCCCCC;
+    display: none; 
+    float: right; 
+    background: #ffffff;
+    padding: 10px;
+}
+
+/*endhelp*/
