@@ -37,41 +37,41 @@
             </div><!--header_line-->
             <!--*************************************************************end header line-->
             <div class="container back_logo" style="padding-bottom: 20px;">
-                    <div class="row header_opacity">
-                        <div class="span4">
-                            <div class="link_menu_left">
-                                <a href="<?php
-                                echo $this->url(
-                                        array(
-                                    'controller' => 'index',
-                                    'action' => 'about'
-                                        ), 'default', true)
-                                ?>">О компании</a><div class="main_menu_line"></div><br />
-                                <a href="#">Новости</a><div class="main_menu_line"></div>
-                            </div>
-                        </div>
-                        <div class="span4">
-                            <a href="/"><img src="../img/logo.png" class="logo_menu" /></a>
-                        </div>
-                        <div class="span4">
-                            <div class="link_menu_right">
-                                <a href="<?php
-                                echo $this->url(
-                                        array(
-                                    'controller' => 'index',
-                                    'action' => 'dillers'
-                                        ), 'default', true)
-                                ?>">Франчайзинг</a><div class="main_menu_line"></div><br />
-                                <a href="<?php
-                                echo $this->url(
-                                        array(
-                                    'controller' => 'index',
-                                    'action' => 'support'
-                                        ), 'default', true)
-                                ?>">Техподдержка</a><div class="main_menu_line"></div>
-                            </div>
+                <div class="row header_opacity">
+                    <div class="span4">
+                        <div class="link_menu_left">
+                            <a href="<?php
+                            echo $this->url(
+                                    array(
+                                'controller' => 'index',
+                                'action' => 'about'
+                                    ), 'default', true)
+                            ?>">О компании</a><div class="main_menu_line"></div><br />
+                            <a href="#">Новости</a><div class="main_menu_line"></div>
                         </div>
                     </div>
+                    <div class="span4">
+                        <a href="/"><img src="../img/logo.png" class="logo_menu" /></a>
+                    </div>
+                    <div class="span4">
+                        <div class="link_menu_right">
+                            <a href="<?php
+                            echo $this->url(
+                                    array(
+                                'controller' => 'index',
+                                'action' => 'dillers'
+                                    ), 'default', true)
+                            ?>">Франчайзинг</a><div class="main_menu_line"></div><br />
+                            <a href="<?php
+                            echo $this->url(
+                                    array(
+                                'controller' => 'index',
+                                'action' => 'support'
+                                    ), 'default', true)
+                            ?>">Техподдержка</a><div class="main_menu_line"></div>
+                        </div>
+                    </div>
+                </div>
             </div><!--container*******************************************************-->
             <!--navbar*******************-->
             <div class="container menu1">
@@ -307,8 +307,28 @@
                         <p><b>Телефон/факс: </b>8(8652) 92-17-14</p>
                         <p><b>E-mail: </b>info@art-track.ru</p>
                     </div>
-                    <div class="span4">
-
+                    <div class="span4 menu_footer">
+                        <ul style="list-style-type: none;">
+                            <li><a href="<?php
+                                echo $this->url(
+                                        array(
+                                    'controller' => 'index',
+                                    'action' => 'about'
+                                        ), 'default', true)
+                                ?>">О компании</a></li>
+                            <li><a href="#">Наши услуги</a></li>
+                            <li><a href="#">GPS мониторинг</a></li>
+                            <li><a href="#">Контроль топлива</a></li>
+                            <li><a href="#">Слежение за авто</a></li>
+                            <li><a href="#">ГЛОНАСС мониторинг</a></li>
+                            <li><a href="<?php
+                                echo $this->url(
+                                        array(
+                                    'controller' => 'help',
+                                    'action' => 'faq'
+                                        ), 'default', true)
+                                ?>">Вопросы</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
