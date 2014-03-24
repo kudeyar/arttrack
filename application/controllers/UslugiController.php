@@ -1,6 +1,6 @@
 <?php
 
-class HelpController extends Zend_Controller_Action
+class UslugiController extends Zend_Controller_Action
 {
 
     public function init()
@@ -8,26 +8,30 @@ class HelpController extends Zend_Controller_Action
         /* Initialize action controller here */
     }
 
-    public function howworkAction()
+    public function uslugiAction()
     {
         // action body
     }
     
-    public function economAction()
+    public function kontroltoplivaAction()
     {
         // action body
     }
     
-    public function wialonstartAction()
+    public function glonassAction()
     {
         // action body
     }
     
-    public function faqAction()
+    public function gpsAction()
     {
         // action body
     }
 
-    
+    public function slezhenieAction()
+    {
+        // action body
+    }
+
 }
 

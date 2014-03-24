@@ -91,7 +91,7 @@ h3, h4, h5 {
 }
 
 .link_menu_right a, .link_menu_left a{
-    font-size: 16pt;
+    font-size: 12pt;
     font-family: "Exo 2";
     color: #333333;
     text-decoration: none;
@@ -280,30 +280,53 @@ h3, h4, h5 {
 .block_map {
     display: block;
     position: relative;
+    background: url(/img/map.png) no-repeat;
+    margin: 50px;
+    height: 467px;
 }
 
 .moscow{
     display: block;
     position: absolute;
-    top: 305px;
-    left: 140px;
+    top: 260px;
+    left: 90px;
+}
+
+.moscow:hover{
+    cursor: pointer;
 }
 
 .moscow_info{
     display: none;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.8);
     position: absolute;
-    top: 305px;
-    left: 140px;
+    top: 278px;
+    left: 95px;
     height: 50px;
-
+    width: 180px;
+    padding: 10px;
 }
 
 .stav{
     display: block;
     position: absolute;
-    top: 420px;
-    left: 85px;
+    top: 375px;
+    left: 35px;
+}
+
+.stav:hover{
+    cursor: pointer;
+}
+
+.stav_info {
+    display: none;
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 392px;
+    left: 40px;
+    height: 50px;
+    width: 180px;
+    padding: 10px;
 }
 /******************end dillers**************************/
 
@@ -552,3 +575,32 @@ h3, h4, h5 {
 }
 
 /*endhelp*/
+
+/*uslugi*/
+.uslugi_info {
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    height: 230px;
+    margin-bottom: 10px;
+}
+
+.uslugi_info:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+
+.uslugi_info p {
+    padding: 10px;
+}
+
+.img_uslugi_info{
+    float: left;
+    margin-right: 10px;
+}
+
+.vopros {
+    list-style-image: url("/img/uslugi/vopros.jpg");
+    font-style: italic;
+    font-size: 16px;
+}
+/*enduslugi*/

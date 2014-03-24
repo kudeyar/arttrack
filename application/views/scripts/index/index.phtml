@@ -109,12 +109,14 @@
     </div>
 
     <div class="block_map">
-        <img src="/img/map.png" class="map">
         <div class="moscow">Москва</div>
         <div class="moscow_info">
-            <address>г. Москва, Шоссе Энтузиастов, 56 стр.44</address>
+            <address><em>г. Москва, Шоссе Энтузиастов, 56 стр.44</em></address>
         </div>
         <div class="stav">Ставрополь</div>
+        <div class="stav_info">
+            <address><em>г. Ставрополь, ул. Гражданская, д. 8</em></address>
+        </div>
     </div>
 </div>
 
@@ -131,6 +133,14 @@
         $('.carousel').carousel({
             interval: 3000
         });
+    });
+    
+    $('.moscow').hover(function() {
+        $('.moscow_info').toggle('slow');
+    });
+    
+    $('.stav').hover(function() {
+        $('.stav_info').toggle('slow');
     });
 </script>
 

@@ -47,7 +47,8 @@
                                 'action' => 'about'
                                     ), 'default', true)
                             ?>">О компании</a><div class="main_menu_line"></div><br />
-                            <a href="#">Новости</a><div class="main_menu_line"></div>
+                            <a href="#">Новости</a><div class="main_menu_line"></div><br />
+                            <a href="#">Получить коммерческое предложение</a><div class="main_menu_line"></div>
                         </div>
                     </div>
                     <div class="span4">
@@ -68,7 +69,8 @@
                                 'controller' => 'index',
                                 'action' => 'support'
                                     ), 'default', true)
-                            ?>">Техподдержка</a><div class="main_menu_line"></div>
+                            ?>">Техподдержка</a><div class="main_menu_line"></div><br />
+                            <a href="">Заказать звонок</a><div class="main_menu_line"></div>
                         </div>
                     </div>
                 </div>
@@ -316,11 +318,41 @@
                                     'action' => 'about'
                                         ), 'default', true)
                                 ?>">О компании</a></li>
-                            <li><a href="#">Наши услуги</a></li>
-                            <li><a href="#">GPS мониторинг</a></li>
-                            <li><a href="#">Контроль топлива</a></li>
-                            <li><a href="#">Слежение за авто</a></li>
-                            <li><a href="#">ГЛОНАСС мониторинг</a></li>
+                            <li><a href="<?php
+                                echo $this->url(
+                                        array(
+                                    'controller' => 'uslugi',
+                                    'action' => 'uslugi'
+                                        ), 'default', true)
+                                ?>">Наши услуги</a></li>
+                            <li><a href="<?php
+                                echo $this->url(
+                                        array(
+                                    'controller' => 'uslugi',
+                                    'action' => 'gps'
+                                        ), 'default', true)
+                                ?>">GPS мониторинг</a></li>
+                            <li><a href="<?php
+                                echo $this->url(
+                                        array(
+                                    'controller' => 'uslugi',
+                                    'action' => 'kontroltopliva'
+                                        ), 'default', true)
+                                ?>">Контроль топлива</a></li>
+                            <li><a href="<?php
+                                echo $this->url(
+                                        array(
+                                    'controller' => 'uslugi',
+                                    'action' => 'slezhenie'
+                                        ), 'default', true)
+                                ?>">Слежение за авто</a></li>
+                            <li><a href="<?php
+                                echo $this->url(
+                                        array(
+                                    'controller' => 'uslugi',
+                                    'action' => 'glonass'
+                                        ), 'default', true)
+                                ?>">ГЛОНАСС мониторинг</a></li>
                             <li><a href="<?php
                                 echo $this->url(
                                         array(
