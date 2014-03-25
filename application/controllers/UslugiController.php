@@ -12,17 +12,17 @@ class UslugiController extends Zend_Controller_Action
     {
         // action body
     }
-    
+
     public function kontroltoplivaAction()
     {
         // action body
     }
-    
+
     public function glonassAction()
     {
         // action body
     }
-    
+
     public function gpsAction()
     {
         // action body
@@ -33,5 +33,9 @@ class UslugiController extends Zend_Controller_Action
         // action body
     }
 
-}
+    public function retranslyatorAction()
+    {
+        
+    }
 
+}

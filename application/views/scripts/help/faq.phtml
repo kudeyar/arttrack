@@ -104,10 +104,10 @@
                     </p>
                 </div>
 
-<!--                <span id="faq13">Как работает спутниковый мониторинг транспорта?</span>
+                <span id="faq13">Как работает спутниковый мониторинг транспорта?</span>
                 <div class="faq13" id="kat" style="display: none;">
                     <p>Более подробную информацию Вы сможете посмотреть Здесь:</p>
-                    <ul class="marker">
+                    <ul class="marker p_link">
                         <li><a href="<?php
                             echo $this->url(
                                     array(
@@ -115,11 +115,29 @@
                                 'action' => 'howwork'
                                     ), 'default', true)
                             ?>">Схема работы;</li>
-                        <li>GPS мониторинг;</li>
-                        <li>Глонасс мониторинг;</li>
-                        <li>Контроль топлива.<//li>
+                        <li><a href="<?php
+                            echo $this->url(
+                                    array(
+                                'controller' => 'uslugi',
+                                'action' => 'gps'
+                                    ), 'default', true)
+                            ?>">GPS мониторинг;</a></li>
+                        <li><a href="<?php
+                            echo $this->url(
+                                    array(
+                                'controller' => 'uslugi',
+                                'action' => 'glonass'
+                                    ), 'default', true)
+                            ?>">Глонасс мониторинг;</a></li>
+                        <li><a href="<?php
+                            echo $this->url(
+                                    array(
+                                'controller' => 'uslugi',
+                                'action' => 'kontroltopliva'
+                                    ), 'default', true)
+                            ?>">Контроль топлива.</a></li>
                     </ul>
-                </div>-->
+                </div>
             </div>
 
         </div>

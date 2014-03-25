@@ -7,28 +7,51 @@
 
     <div class="carousel-inner">
         <div class="item active">
-            <img src="./img/ban1.jpg">
-            <div class="carousel-caption">
-                <h4>Повышаем эффективность Вашего бизнеса</h4>
-                <p>Снижение нецелевого использования транспорта на 100%
-                    Уменьшение коммуникационных расходов на 50%
-                    Уменьшение амортизации автопарка на 15%
-                    Экономия топлива на предприятии до 50%</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="./img/ban2.png">
-            <div class="carousel-caption">
+            <img src="./img/glonass-fon.jpg">
+            <div class="carousel_text">
                 <h4>ГЛОНАСС мониторинг</h4>
                 <p>Оборудование, соответствующее требованиям федерального закона РФ от 14 февраля 2009 г. N 22-ФЗ "О навигационной деятельности". 
                     Выдача необходимых документов для прохождения лицензирования и технического осмотра.</p>
+                <div class="button_s" style="float: right;" onclick="location.href = '<?php
+                echo $this->url(
+                        array(
+                    'controller' => 'uslugi',
+                    'action' => 'glonass'
+                        ), 'default', true)
+                ?>';">Подробнее...</div>
             </div>
         </div>
         <div class="item">
-            <img src="./img/ban3.png">
-            <div class="carousel-caption">
+            <img src="./img/logo-kontrol-topliva.jpg">
+            <div class="carousel_text">
+                <h4>Контроль топлива</h4>
+                <p>Датчики уровня топлива LLS
+                    производства Omnicomm. 
+                    Пожизненная гарантия! Установка 
+                    датчика уровня топлива позволит 
+                    сделать систему контроля ГСМ 
+                    максимально прозрачной.</p>
+                <div class="button_s" style="float: right;" onclick="location.href = '<?php
+                echo $this->url(
+                        array(
+                    'controller' => 'uslugi',
+                    'action' => 'kontroltopliva'
+                        ), 'default', true)
+                ?>';">Подробнее...</div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="./img/system-paralel-fon.jpg">
+            <div class="carousel_text">
                 <h4>Системы параллельного вождения</h4>
                 <p>Ресурсосберегающие технологии для сельского хозяйства от культовой компании Trimble. Навигация для посева и опрыскивания.</p>
+                <div class="button_s" style="float: right;" onclick="location.href = '<?php
+                echo $this->url(
+                        array(
+                    'controller' => 'industry',
+                    'action' => 'parallels'
+                        ), 'default', true)
+                ?>';">Подробнее...</div> 
             </div>
         </div>
     </div>
@@ -134,11 +157,11 @@
             interval: 3000
         });
     });
-    
+
     $('.moscow').hover(function() {
         $('.moscow_info').toggle('slow');
     });
-    
+
     $('.stav').hover(function() {
         $('.stav_info').toggle('slow');
     });
