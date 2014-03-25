@@ -105,7 +105,8 @@ h3, h4, h5 {
 
 .link_menu_right, .link_menu_left {
     display: block;
-    margin-top: 40px;
+    margin-top: 40px;    
+    position: relative;
 }
 
 .menu1 {
@@ -348,8 +349,31 @@ h3, h4, h5 {
     text-align: center;
 }
 
+.form_commerce{
+    padding: 10px;
+    display: none;
+    background: url(/img/setka_form.png);
+    border-radius: 3px;
+    border: 1px solid #28597a;
+    width: 220px;
+    height: 120px;
+    float: right;
+    z-index: 999;
+    position: absolute;
+    left: 54px;
+}
+
 .form_call{
     padding: 10px;
+    display: none;
+    background: url(/img/setka_form.png);
+    border-radius: 3px;
+    border: 1px solid #28597a;
+    width: 220px;
+    height: 200px;
+    float: left;
+    z-index: 999;
+    position: absolute;
 }
 
 /*********end industry**********/
@@ -405,9 +429,9 @@ h3, h4, h5 {
     -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
     box-shadow: rgba(0,0,0,1) 0 1px 0;
     text-shadow: rgba(0,0,0,.4) 0 1px 0;
-    color: white;
-    font-size: 13px;
-    font-family: Georgia, serif;
+    color: white !important; 
+    font-size: 13px !important;
+    font-family: Georgia, serif !important;
     text-decoration: none;
     vertical-align: middle;
     display: inline-block;
@@ -572,6 +596,10 @@ h3, h4, h5 {
 
 #kat p {
     margin: 10px 0px;
+}
+
+.tab-pane>.container{
+    width: 900px;
 }
 
 /*endhelp*/

@@ -44,11 +44,20 @@
                             echo $this->url(
                                     array(
                                 'controller' => 'index',
-                                'action' => 'about'
+                                'action'     => 'about'
                                     ), 'default', true)
                             ?>">О компании</a><div class="main_menu_line"></div><br />
                             <a href="#">Новости</a><div class="main_menu_line"></div><br />
-                            <a href="#">Получить коммерческое предложение</a><div class="main_menu_line"></div>
+                            <a href="#" class="getCommerce">Получить коммерческое предложение</a><div class="main_menu_line"></div>
+                            <div class="form_commerce">
+                                <form method="POST">
+                                    <!--[if IE]><label>Ваше имя</label><![endif]-->
+                                    <input type="text" placeholder="Ваше имя" required />
+                                    <!--[if IE]><label>Ваш e-mail</label><![endif]-->
+                                    <input type="email" placeholder="Ваш e-mail" required />
+                                    <a href="#" class="button_s" style="margin: 0 60px;">Получить</a>
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div class="span4">
@@ -60,17 +69,30 @@
                             echo $this->url(
                                     array(
                                 'controller' => 'index',
-                                'action' => 'dillers'
+                                'action'     => 'dillers'
                                     ), 'default', true)
                             ?>">Франчайзинг</a><div class="main_menu_line"></div><br />
                             <a href="<?php
                             echo $this->url(
                                     array(
                                 'controller' => 'index',
-                                'action' => 'support'
+                                'action'     => 'support'
                                     ), 'default', true)
                             ?>">Техподдержка</a><div class="main_menu_line"></div><br />
-                            <a href="">Заказать звонок</a><div class="main_menu_line"></div>
+                            <a href="#" class="getCall">Заказать звонок</a><div class="main_menu_line"></div>
+                            <div class="form_call">
+                                <form method="POST">
+                                    <!--[if IE]><label>Ваше имя</label><![endif]-->
+                                    <input type="text" placeholder="Ваше имя" required />
+                                    <!--[if IE]><label>Ваш город</label><![endif]-->
+                                    <input type="text" placeholder="Ваш город" required />
+                                    <!--[if IE]><label>Ваш телефон</label><![endif]-->
+                                    <input type="tel" placeholder="Ваш телефон" required />
+                                    <!--[if IE]><label>Ваш звонить</label><![endif]-->
+                                    <input type="text" placeholder="Когда звонить" required />
+                                    <a href="#" class="button_s" style="margin: 0 70px;">Заказать</a>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,7 +106,7 @@
                                 echo $this->url(
                                         array(
                                     'controller' => 'index',
-                                    'action' => 'helpbutton'
+                                    'action'     => 'helpbutton'
                                         ), 'default', true)
                                 ?>" style="color: #fff;">Кнопка доверия</a></li>
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Оборудование<b class="caret"></b></a>
@@ -93,14 +115,14 @@
                                         echo $this->url(
                                                 array(
                                             'controller' => 'equipment',
-                                            'action' => 'soft'
+                                            'action'     => 'soft'
                                                 ), 'default', true)
                                         ?>">Программное обеспечение</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
                                             'controller' => 'equipment',
-                                            'action' => 'tracker'
+                                            'action'     => 'tracker'
                                                 ), 'default', true)
                                         ?>">GPS/ГЛОНАСС оборудование</a></li>
 
@@ -108,35 +130,35 @@
                                         echo $this->url(
                                                 array(
                                             'controller' => 'equipment',
-                                            'action' => 'dut'
+                                            'action'     => 'dut'
                                                 ), 'default', true)
                                         ?>">Датчики уровня топлива (ДУТ)</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
                                             'controller' => 'equipment',
-                                            'action' => 'mayak'
+                                            'action'     => 'mayak'
                                                 ), 'default', true)
                                         ?>">GPS маяки</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
                                             'controller' => 'equipment',
-                                            'action' => 'kursoroukazatel'
+                                            'action'     => 'kursoroukazatel'
                                                 ), 'default', true)
                                         ?>">Курсоуказатели</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
                                             'controller' => 'equipment',
-                                            'action' => 'tachograph'
+                                            'action'     => 'tachograph'
                                                 ), 'default', true)
                                         ?>">Тахографы</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
                                             'controller' => 'equipment',
-                                            'action' => 'options'
+                                            'action'     => 'options'
                                                 ), 'default', true)
                                         ?>">Отдельные опции</a></li>
                                 </ul>
@@ -148,14 +170,14 @@
                                         echo $this->url(
                                                 array(
                                             'controller' => 'industry',
-                                            'action' => 'gruzoperevozki'
+                                            'action'     => 'gruzoperevozki'
                                                 ), 'default', true)
                                         ?>">Грузоперевозки</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
                                             'controller' => 'industry',
-                                            'action' => 'passazhir'
+                                            'action'     => 'passazhir'
                                                 ), 'default', true)
                                         ?>">Пассажироперевозки</a></li>
                                     <li class="dropdown-submenu">
@@ -163,7 +185,7 @@
                                         echo $this->url(
                                                 array(
                                             'controller' => 'industry',
-                                            'action' => 'apk'
+                                            'action'     => 'apk'
                                                 ), 'default', true)
                                         ?>">Агропромышленный комплекс</a>
                                         <ul class="dropdown-menu">
@@ -171,21 +193,21 @@
                                                 echo $this->url(
                                                         array(
                                                     'controller' => 'industry',
-                                                    'action' => 'parallels'
+                                                    'action'     => 'parallels'
                                                         ), 'default', true)
                                                 ?>">Параллельное вождение</a></li>
                                             <li><a href="<?php
                                                 echo $this->url(
                                                         array(
                                                     'controller' => 'industry',
-                                                    'action' => 'kursor'
+                                                    'action'     => 'kursor'
                                                         ), 'default', true)
                                                 ?>">Курсоуказатели</a></li>
                                             <li><a href="<?php
                                                 echo $this->url(
                                                         array(
                                                     'controller' => 'industry',
-                                                    'action' => 'pastuh'
+                                                    'action'     => 'pastuh'
                                                         ), 'default', true)
                                                 ?>">Электропастух</a></li>
                                         </ul>
@@ -194,61 +216,25 @@
                                         echo $this->url(
                                                 array(
                                             'controller' => 'industry',
-                                            'action' => 'logistic'
+                                            'action'     => 'logistic'
                                                 ), 'default', true)
                                         ?>">Дистрибьюция и логистика</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
                                             'controller' => 'industry',
-                                            'action' => 'lizing'
+                                            'action'     => 'lizing'
                                                 ), 'default', true)
                                         ?>">Лизинг</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
                                             'controller' => 'industry',
-                                            'action' => 'mobile'
+                                            'action'     => 'mobile'
                                                 ), 'default', true)
                                         ?>">Мобильные сотрудники</a></li>
                                 </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Получить коммерческое предложение</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="form_call">
-                                            <form method="POST">
-                                                <!--[if IE]><label>Ваше имя</label><![endif]-->
-                                                <input type="text" class="input-xlarge" placeholder="Ваше имя" required />
-                                                <!--[if IE]><label>Ваш e-mail</label><![endif]-->
-                                                <input type="email" class="input-xlarge" placeholder="Ваш e-mail" required />
-                                                <a href="#" class="button_s">Получить</a>
-                                            </form>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Заказать звонок</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="form_call">
-                                            <form method="POST">
-                                                <!--[if IE]><label>Ваше имя</label><![endif]-->
-                                                <input type="text" placeholder="Ваше имя" required />
-                                                <!--[if IE]><label>Ваш город</label><![endif]-->
-                                                <input type="text" placeholder="Ваш город" required />
-                                                <!--[if IE]><label>Ваш телефон</label><![endif]-->
-                                                <input type="tel" placeholder="Ваш телефон" required />
-                                                <!--[if IE]><label>Ваш звонить</label><![endif]-->
-                                                <input type="text" placeholder="Когда звонить" required />
-                                                <a href="#" class="button_s">Заказать</a>
-                                            </form>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
+                            </li>                            
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Помощь<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="http://wialonb3.gurtam.com/login_action.html?user=wialon_test&passw=test&action=login&skip_auto=1&lang=ru&sid=cb33c361be9a0a82d7655e4e228cbf90" target="_blank">Демо доступ</a></li>
@@ -256,7 +242,7 @@
                                         echo $this->url(
                                                 array(
                                             'controller' => 'help',
-                                            'action' => 'howwork'
+                                            'action'     => 'howwork'
                                                 ), 'default', true)
                                         ?>">Как это работает</a></li>
 
@@ -264,24 +250,27 @@
                                         echo $this->url(
                                                 array(
                                             'controller' => 'help',
-                                            'action' => 'econom'
+                                            'action'     => 'econom'
                                                 ), 'default', true)
                                         ?>">Экономический эффект</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
                                             'controller' => 'help',
-                                            'action' => 'wialonstart'
+                                            'action'     => 'wialonstart'
                                                 ), 'default', true)
                                         ?>">Wialon: Начало</a></li>
                                     <li><a href="<?php
                                         echo $this->url(
                                                 array(
                                             'controller' => 'help',
-                                            'action' => 'faq'
+                                            'action'     => 'faq'
                                                 ), 'default', true)
                                         ?>">F.A.Q.</a></li>                                    
                                 </ul>
+                            </li>
+                            <li>
+                                <a href="#">Ретранслятор</a>
                             </li>
                         </ul>
 
@@ -315,49 +304,49 @@
                                 echo $this->url(
                                         array(
                                     'controller' => 'index',
-                                    'action' => 'about'
+                                    'action'     => 'about'
                                         ), 'default', true)
                                 ?>">О компании</a></li>
                             <li><a href="<?php
                                 echo $this->url(
                                         array(
                                     'controller' => 'uslugi',
-                                    'action' => 'uslugi'
+                                    'action'     => 'uslugi'
                                         ), 'default', true)
                                 ?>">Наши услуги</a></li>
                             <li><a href="<?php
                                 echo $this->url(
                                         array(
                                     'controller' => 'uslugi',
-                                    'action' => 'gps'
+                                    'action'     => 'gps'
                                         ), 'default', true)
                                 ?>">GPS мониторинг</a></li>
                             <li><a href="<?php
                                 echo $this->url(
                                         array(
                                     'controller' => 'uslugi',
-                                    'action' => 'kontroltopliva'
+                                    'action'     => 'kontroltopliva'
                                         ), 'default', true)
                                 ?>">Контроль топлива</a></li>
                             <li><a href="<?php
                                 echo $this->url(
                                         array(
                                     'controller' => 'uslugi',
-                                    'action' => 'slezhenie'
+                                    'action'     => 'slezhenie'
                                         ), 'default', true)
                                 ?>">Слежение за авто</a></li>
                             <li><a href="<?php
                                 echo $this->url(
                                         array(
                                     'controller' => 'uslugi',
-                                    'action' => 'glonass'
+                                    'action'     => 'glonass'
                                         ), 'default', true)
                                 ?>">ГЛОНАСС мониторинг</a></li>
                             <li><a href="<?php
                                 echo $this->url(
                                         array(
                                     'controller' => 'help',
-                                    'action' => 'faq'
+                                    'action'     => 'faq'
                                         ), 'default', true)
                                 ?>">Вопросы</a></li>
                         </ul>
@@ -365,7 +354,7 @@
                 </div>
             </div>
         </div>
-
+        <script src="/js/scripts.js"></script>
         <script src="/js/bootstrap.min.js"></script>
     </body>
 </html>
