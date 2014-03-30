@@ -1,0 +1,34 @@
+<form method="POST">
+    <!--[if IE]><label>Ваше имя</label><![endif]-->
+    <input type="text" name="name" placeholder="Ваше имя" required />
+    <!--[if IE]><label>Ваш e-mail</label><![endif]-->
+    <input type="email" name="email" placeholder="Ваш e-mail" required />
+    <a href="#" class="button_s set_commerce" style="margin: 0 60px;">Получить</a>
+</form>
+
+<script>
+    var params = {};
+    $('.set_commerce').click(function() {
+        $form = $('form');
+        if ($form.find('input[name=name]').val() == '') {
+            alert('Введите имя');
+            return false;
+        } else {
+            params.name = $form.find('input[name=name]').val();
+        }
+        if ($form.find('input[name=email]').val() == '') {
+            alert('Введите email');
+            return false;
+        } else {
+            params.email = $form.find('input[name=email]').val();
+        }
+        params.addcommerce = 1;
+        $.post('/index/getcommerce/', params, function(data) {
+            $('.form_commerce').slideToggle();            
+            $form.find('input[name]').val('');
+        });
+
+        return false;
+    });
+
+</script>
