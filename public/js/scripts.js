@@ -1,15 +1,10 @@
-$('.getCommerce').click(function() {
-    $.get('/index/getcommerce/', function(data) {
-        $('.form_commerce').html(data);
-    });
+$('.getCommerce').click(function(){
     $('.form_commerce').slideToggle();
     return false;
-});
+})
 
-$('.getCall').click(function() {
-    $.get('/index/tellorder/', function(data) {
-        $('.form_call').html(data);
-    });
+$('.getCall').click(function(){
     $('.form_call').slideToggle();
     return false;
-});
+})
+

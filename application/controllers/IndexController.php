@@ -12,17 +12,17 @@ class IndexController extends Zend_Controller_Action
     {
         // action body
     }
-
+    
     public function dillersAction()
     {
         // action body
     }
-
+    
     public function supportAction()
     {
         // action body
     }
-
+    
     public function aboutAction()
     {
         // action body
@@ -33,38 +33,5 @@ class IndexController extends Zend_Controller_Action
         // action body
     }
 
-    public function tellorderAction()
-    {
-        $this->_helper->layout->disableLayout();
-        $telladd = new Application_Model_Index();
-        if ($this->getParam('addtell')) {
-            $name = trim(htmlspecialchars($this->getParam('name')));
-            $city = trim(htmlspecialchars($this->getParam('city')));
-            $phone = trim(htmlspecialchars($this->getParam('phone')));
-            $then = trim(htmlspecialchars($this->getParam('then')));
-            if ($name != '' or $city != '' or $phone != '' or $then != '') {
-                $telladd->addTells($name, $city, $phone, $then);
-            } else {
-                return FALSE;
-            }
-        }
-
-        
-    }
-
-    public function getcommerceAction()
-    {
-        $this->_helper->layout->disableLayout();
-        $comadd = new Application_Model_Index();
-        if ($this->getParam('addcommerce')) {
-            $name = trim(htmlspecialchars($this->getParam('name')));
-            $email = trim(htmlspecialchars($this->getParam('email')));
-            if ($name != '' or $email != '') {
-                $comadd->addCommerce($name, $email);
-            } else {
-                return FALSE;
-            }
-        }
-    }
-
 }
+
