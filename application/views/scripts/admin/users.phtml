@@ -1,108 +1,185 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <?php echo $this->headLink()->appendStylesheet('/css/bootstrap.min.css') ?> 
-        <?php echo $this->headLink()->appendStylesheet('/css/style.css') ?>        
+        <?php echo $this->headLink()->appendStylesheet('/css/style.css') ?>   
+        <?php echo $this->headLink()->appendStylesheet('/css/admin.css') ?>   
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     </head>
 
     <body>
-        <div style="margin: 50px;">
-            <h2>Данные от пользователей</h2>
-
-            <div class="tabbable"> <!-- Only required for left/right tabs -->
+        <div style="margin: 10px 50px;">
+            <div class="tabbable tabs-left"> <!-- Only required for left/right tabs -->
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#adtab1" data-toggle="tab">Обратный звонок</a></li>
-                    <li><a href="#adtab2" data-toggle="tab">Комм. предложение</a></li>
-                    <li><a href="#adtab3" data-toggle="tab">Поддержка</a></li>
-                    <li><a href="#adtab4" data-toggle="tab">Заказы продуктов</a></li>
-                    <li><a href="#adtab5" data-toggle="tab">Вакансии</a></li>
+                    <li class="active"><a href="#adtab10" data-toggle="tab">Пользователи</a></li>
+                    <li><a href="#adtab20" data-toggle="tab">Данные на сайте</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="adtab1">
-                        <h3>Обратные звонки</h3>
-                        <table class="table table-striped table-bordered table-condensed">
-                            <tr>
-                                <th>ID</th>
-                                <th>Имя</th>
-                                <th>Город</th>
-                                <th>Телефон</th>
-                                <th>Когда звонить</th>
-                                <th>Дата</th>
-                                <th>Действия</th>
-                            </tr>
-                            <? foreach ($this->tells as $tells) : ?>
-                            <tr>
-                                <td><?= $tells['id'];?></td>
-                                <td><?= $tells['name'];?></td>
-                                <td><?= $tells['city'];?></td>
-                                <td><?= $tells['phone'];?></td>
-                                <td><?= $tells['when'];?></td>
-                                <td><?= $tells['datetime'];?></td>
-                                <td><a href="#" class="tell_delete" title="Удалить"><i class="icon-remove"></i></a></td>
-                            </tr>
-                            <? endforeach; ?>
-                            
-                        </table>
-                    </div>
-                    <div class="tab-pane" id="adtab2">
-                        <h3>Комм. предложения</h3>
-                        <table class="table table-striped table-bordered table-condensed">
-                            <tr>
-                                <th>ID</th>
-                                <th>Имя</th>
-                                <th>email</th>
-                                <th>Дата</th>
-                                <th>Действия</th>
-                            </tr>
-                            <? foreach ($this->commerce as $commerce) : ?>
-                            <tr>
-                                <td><?= $commerce['id'];?></td>
-                                <td><?= $commerce['name'];?></td>
-                                <td><?= $commerce['email'];?></td>
-                                <td><?= $commerce['datetime'];?></td>
-                                <td><a href="#" class="commerce_delete" title="Удалить"><i class="icon-remove"></i></a></td>
-                            </tr>
-                            <? endforeach; ?>
-                            
-                        </table>
-                    </div>
-                    <div class="tab-pane" id="adtab3">
-                        <h3>Письма из Техподдержки</h3>
-                        <table class="table table-striped table-bordered table-condensed">
-                            <tr>
-                                <th>ID</th>
-                                <th>Имя</th>
-                                <th>Телефон</th>
-                                <th>Email</th>
-                                <th>Сообщение</th>
-                                <th>Дата</th>
-                                <th>Действия</th>
-                            </tr>
-                            <? foreach ($this->support as $support) : ?>
-                            <tr>
-                                <td><?= $support['id'];?></td>
-                                <td><?= $support['name'];?></td>
-                                <td><?= $support['phone'];?></td>
-                                <td><?= $support['email'];?></td>
-                                <td><?= $support['comment'];?></td>
-                                <td><?= $support['datetime'];?></td>
-                                <td><a href="#" class="support_delete" title="Удалить"><i class="icon-remove"></i></a></td>
-                            </tr>
-                            <? endforeach; ?>
-                            
-                        </table>
-                    </div>
-                    <div class="tab-pane" id="adtab4">
-                        <h3>Заказы товаров</h3>
-                    </div>
-                    <div class="tab-pane" id="adtab5">
+                    <div class="tab-pane active" id="adtab10">
+                        <div id="data_users">
+                            <h2>Данные от пользователей</h2>
+                            <div class="tabbable"> <!-- Only required for left/right tabs -->
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#adtab1" data-toggle="tab">Обратный звонок</a></li>
+                                    <li><a href="#adtab2" data-toggle="tab">Комм. предложение</a></li>
+                                    <li><a href="#adtab3" data-toggle="tab">Поддержка</a></li>
+                                    <li><a href="#adtab4" data-toggle="tab">Заказы продуктов</a></li>
+                                    <li><a href="#adtab5" data-toggle="tab">Вакансии</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="adtab1">
+                                        <h3>Обратные звонки</h3>
+                                        <table class="table table-striped table-bordered table-condensed">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Имя</th>
+                                                <th>Город</th>
+                                                <th>Телефон</th>
+                                                <th>Когда звонить</th>
+                                                <th>Дата</th>
+                                                <th>Действия</th>
+                                            </tr>
+                                            <? foreach ($this->tells as $tells) : ?>
+                                                <tr>
+                                                    <td><?= $tells['id']; ?></td>
+                                                    <td><?= $tells['name']; ?></td>
+                                                    <td><?= $tells['city']; ?></td>
+                                                    <td><?= $tells['phone']; ?></td>
+                                                    <td><?= $tells['when']; ?></td>
+                                                    <td><?= $tells['datetime']; ?></td>
+                                                    <td><a href="#" class="tell_delete" title="Удалить"><i class="icon-remove"></i></a></td>
+                                                </tr>
+                                            <? endforeach; ?>
 
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane" id="adtab2">
+                                        <h3>Комм. предложения</h3>
+                                        <table class="table table-striped table-bordered table-condensed">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Имя</th>
+                                                <th>email</th>
+                                                <th>Дата</th>
+                                                <th>Действия</th>
+                                            </tr>
+                                            <? foreach ($this->commerce as $commerce) : ?>
+                                                <tr>
+                                                    <td><?= $commerce['id']; ?></td>
+                                                    <td><?= $commerce['name']; ?></td>
+                                                    <td><?= $commerce['email']; ?></td>
+                                                    <td><?= $commerce['datetime']; ?></td>
+                                                    <td><a href="#" class="commerce_delete" title="Удалить"><i class="icon-remove"></i></a></td>
+                                                </tr>
+                                            <? endforeach; ?>
+
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane" id="adtab3">
+                                        <h3>Письма из Техподдержки</h3>
+                                        <table class="table table-striped table-bordered table-condensed">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Имя</th>
+                                                <th>Телефон</th>
+                                                <th>Email</th>
+                                                <th>Сообщение</th>
+                                                <th>Дата</th>
+                                                <th>Действия</th>
+                                            </tr>
+                                            <? foreach ($this->support as $support) : ?>
+                                                <tr>
+                                                    <td><?= $support['id']; ?></td>
+                                                    <td><?= $support['name']; ?></td>
+                                                    <td><?= $support['phone']; ?></td>
+                                                    <td><?= $support['email']; ?></td>
+                                                    <td><?= $support['comment']; ?></td>
+                                                    <td><?= $support['datetime']; ?></td>
+                                                    <td><a href="#" class="support_delete" title="Удалить"><i class="icon-remove"></i></a></td>
+                                                </tr>
+                                            <? endforeach; ?>
+
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane" id="adtab4">
+                                        <h3>Заказы товаров</h3>
+                                    </div>
+                                    <div class="tab-pane" id="adtab5">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="adtab20">
+                        <div id="add_data">
+                            <h2>Добавление данных на сайт</h2>
+                            <div class="tabbable"> <!-- Only required for left/right tabs -->
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#adtab11" data-toggle="tab">Новости</a></li>
+                                    <li><a href="#adtab12" data-toggle="tab">Города</a></li>
+                                    <li><a href="#adtab13" data-toggle="tab">Акции</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="adtab11">
+                                        <h3>Новости</h3>
+
+                                    </div>
+                                    <div class="tab-pane" id="adtab12">
+                                        <a href="#" class="add_city">Добавить новый</a>
+                                        <div id="add_new_city">
+                                            <form method="POST">
+                                                <label><input type="text" name="name" placeholder="Название" class="input-xxlarge"></label>
+                                                <label><input type="text" name="addres" placeholder="Адрес" class="input-xxlarge"></label>
+                                                <label><input type="text" name="phone" placeholder="Телефон" class="input-xxlarge"></label>
+                                                <label><input type="email" name="email" placeholder="Email" class="input-xxlarge"></label>
+                                                <label><input type="text" name="yandex" placeholder="Yandex" class="input-xxlarge"></label>
+                                                <a href="#" class="button_s button_add_city">Добавить</a>
+                                            </form>
+                                        </div>
+                                        <h3>Города</h3>
+                                        <table class="table table-striped table-bordered table-condensed">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Название</th>
+                                                <th>Адрес</th>
+                                                <th>Телефон</th>
+                                                <th>Email</th>
+                                                <th>Yandex</th>
+                                            </tr>
+                                            <? foreach ($this->cities as $cities) : ?>
+                                                <tr>
+                                                    <td><?= $cities['id']; ?></td>
+                                                    <td><?= $cities['name']; ?></td>
+                                                    <td><?= $cities['addres']; ?></td>
+                                                    <td><?= $cities['phone']; ?></td>
+                                                    <td><?= $cities['email']; ?></td>
+                                                    <td><?= $cities['yandex']; ?></td>
+                                                    <td><a href="#" class="commerce_delete" title="Удалить"><i class="icon-remove"></i></a></td>
+                                                </tr>
+                                            <? endforeach; ?>
+
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane" id="adtab13">
+                                        <h3>Акции</h3>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        
         <script src="/js/bootstrap.min.js"></script>
+        <script>
+             $('.add_city').click(function(){
+                 $('#add_new_city').slideToggle('fast');
+             });
+        </script>
     </body>
 </html>

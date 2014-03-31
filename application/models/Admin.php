@@ -25,6 +25,12 @@ class Application_Model_Admin
         $getSupport = Zend_Db_Table::getDefaultAdapter()->fetchAll("SELECT * FROM `support` ORDER BY datetime DESC");
         return $getSupport;
     }
+    
+    public function getCities()
+    {
+        $getCities = Zend_Db_Table::getDefaultAdapter()->fetchAll("SELECT * FROM `cities` ORDER BY id");
+        return $getCities;
+    }
 
 }
 

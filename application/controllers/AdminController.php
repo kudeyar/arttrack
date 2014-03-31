@@ -20,6 +20,7 @@ class AdminController extends Zend_Controller_Action
         $this->view->tells    = $adminService->getTells();
         $this->view->commerce = $adminService->getCommerce();
         $this->view->support = $adminService->getSupport();
+        $this->view->cities = $adminService->getCities();
     }
 
 }
