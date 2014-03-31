@@ -4,8 +4,9 @@
     <!--[if IE]><label>Ваш e-mail</label><![endif]-->
     <input type="email" name="email" placeholder="Ваш e-mail" required />
     <a href="#" class="button_s set_commerce" style="margin: 0 60px;">Получить</a>
+    
 </form>
-
+<span>Спасибо, проверьте Вашу почту!</span>
 <script>
     var params = {};
     $('.set_commerce').click(function() {
@@ -23,9 +24,10 @@
             params.email = $form.find('input[name=email]').val();
         }
         params.addcommerce = 1;
-        $.post('/index/getcommerce/', params, function(data) {
+        $.post('/index/getcommerce/', params, function(data) {       
             $('.form_commerce').slideToggle();            
             $form.find('input[name]').val('');
+            alert('Посмотрите вашу почту');
         });
 
         return false;

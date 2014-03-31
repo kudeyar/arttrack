@@ -385,6 +385,14 @@ h3, h4, h5 {
     left: 54px;
 }
 
+.form_commerce span{
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: blue;
+    margin-right: 17px;;
+}
+
 .form_call{
     padding: 10px;
     display: none;

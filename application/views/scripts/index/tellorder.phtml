@@ -42,6 +42,7 @@
         $.post('/index/tellorder/', params, function(data) {
             $('.form_call').slideToggle();
             $form.find('input[name]').val('');
+            alert('Спасибо, ваша заявка принята');
         });
 
         return false;

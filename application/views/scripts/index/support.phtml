@@ -16,19 +16,19 @@
                 <form method="post">
                     <div class="control-group">
                         <div class="controls">
-                            <label><input type="text" placeholder="Ваше имя" required></label>
+                            <label><input type="text" name="name" placeholder="Ваше имя" required></label>
                         </div>
                         <div class="controls">
-                            <label><input type="text" placeholder="Ваш телефон" required></label>
+                            <label><input type="text" name="phone" placeholder="Ваш телефон" required></label>
                         </div>
                         <div class="controls">
-                            <label><input type="email" placeholder="Ваш e-mail" required></label>
+                            <label><input type="email" name="email" placeholder="Ваш e-mail" required></label>
                         </div>
                         <div class="controls">
-                            <label><textarea placeholder="Ваше обращение" required></textarea></label>
+                            <label><textarea placeholder="Ваше обращение" name="comment" required></textarea></label>
                         </div>
                         <div class="controls">
-                            <label style="margin-left: 40px;" class="buttons"><a href="#" class="button_s">Отправить отзыв</a></label>
+                            <label style="margin-left: 40px;" class="buttons"><a href="#" class="button_s send_message">Отправить отзыв</a></label>
                         </div>
                     </div>
                 </form>
@@ -37,3 +37,43 @@
 
     </div>
 </div>
+
+<script>
+    var params = {};
+    $('.send_message').click(function() {
+        $form = $('form');
+        if ($form.find('input[name=name]').val() == '') {
+            alert('Введите имя');
+            return false;
+        } else {
+            params.name = $form.find('input[name=name]').val();
+        }
+        if ($form.find('input[name=phone]').val() == '') {
+            alert('Введите телефон');
+            return false;
+        } else {
+            params.phone = $form.find('input[name=phone]').val();
+        }
+        if ($form.find('input[name=email]').val() == '') {
+            alert('Введите email');
+            return false;
+        } else {
+            params.email = $form.find('input[name=email]').val();
+        }
+        if ($form.find('textarea[name=comment]').val() == '') {
+            alert('Введите сообщение');
+            return false;
+        } else {
+            params.comment = $form.find('textarea[name=comment]').val();
+        }
+        params.support = 1;
+        $.post('/index/support/', params, function(data) {
+            $form.find('input[name]').val('');
+            $form.find('textarea[name]').val('');
+            alert('Спасибо, Ваше мнение важно для нас');
+        });
+
+        return false;
+    });
+
+</script>

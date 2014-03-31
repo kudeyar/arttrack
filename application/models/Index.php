@@ -33,6 +33,19 @@ class Application_Model_Index {
         $table->insert($data);
     }
     
+    public function sendSupport($name, $phone, $email, $comment) {
+        $table = new Application_Model_SupportMapper();
+
+        $data = array(
+            'name' => $name,
+            'phone' => $phone,
+            'email' => $email,
+            'comment' => $comment
+        );
+
+        $table->insert($data);
+    }
+    
 }
 
 ?>

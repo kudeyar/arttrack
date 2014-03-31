@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <?php echo $this->headLink()->appendStylesheet('/css/bootstrap.min.css') ?> 
+        <?php echo $this->headLink()->appendStylesheet('/css/style.css') ?>        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div style="margin: 50px;">
+            <h2>Данные от пользователей</h2>
+
+            <div class="tabbable"> <!-- Only required for left/right tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#adtab1" data-toggle="tab">Обратный звонок</a></li>
+                    <li><a href="#adtab2" data-toggle="tab">Комм. предложение</a></li>
+                    <li><a href="#adtab3" data-toggle="tab">Поддержка</a></li>
+                    <li><a href="#adtab4" data-toggle="tab">Заказы продуктов</a></li>
+                    <li><a href="#adtab5" data-toggle="tab">Вакансии</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="adtab1">
+                        <h3>Обратные звонки</h3>
+                        <table class="table table-striped table-bordered table-condensed">
+                            <tr>
+                                <th>ID</th>
+                                <th>Имя</th>
+                                <th>Город</th>
+                                <th>Телефон</th>
+                                <th>Когда звонить</th>
+                                <th>Дата</th>
+                                <th>Действия</th>
+                            </tr>
+                            <? foreach ($this->tells as $tells) : ?>
+                            <tr>
+                                <td><?= $tells['id'];?></td>
+                                <td><?= $tells['name'];?></td>
+                                <td><?= $tells['city'];?></td>
+                                <td><?= $tells['phone'];?></td>
+                                <td><?= $tells['when'];?></td>
+                                <td><?= $tells['datetime'];?></td>
+                                <td><a href="#" class="tell_delete" title="Удалить"><i class="icon-remove"></i></a></td>
+                            </tr>
+                            <? endforeach; ?>
+                            
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="adtab2">
+                        <h3>Комм. предложения</h3>
+                        <table class="table table-striped table-bordered table-condensed">
+                            <tr>
+                                <th>ID</th>
+                                <th>Имя</th>
+                                <th>email</th>
+                                <th>Дата</th>
+                                <th>Действия</th>
+                            </tr>
+                            <? foreach ($this->commerce as $commerce) : ?>
+                            <tr>
+                                <td><?= $commerce['id'];?></td>
+                                <td><?= $commerce['name'];?></td>
+                                <td><?= $commerce['email'];?></td>
+                                <td><?= $commerce['datetime'];?></td>
+                                <td><a href="#" class="commerce_delete" title="Удалить"><i class="icon-remove"></i></a></td>
+                            </tr>
+                            <? endforeach; ?>
+                            
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="adtab3">
+                        <h3>Письма из Техподдержки</h3>
+                        <table class="table table-striped table-bordered table-condensed">
+                            <tr>
+                                <th>ID</th>
+                                <th>Имя</th>
+                                <th>Телефон</th>
+                                <th>Email</th>
+                                <th>Сообщение</th>
+                                <th>Дата</th>
+                                <th>Действия</th>
+                            </tr>
+                            <? foreach ($this->support as $support) : ?>
+                            <tr>
+                                <td><?= $support['id'];?></td>
+                                <td><?= $support['name'];?></td>
+                                <td><?= $support['phone'];?></td>
+                                <td><?= $support['email'];?></td>
+                                <td><?= $support['comment'];?></td>
+                                <td><?= $support['datetime'];?></td>
+                                <td><a href="#" class="support_delete" title="Удалить"><i class="icon-remove"></i></a></td>
+                            </tr>
+                            <? endforeach; ?>
+                            
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="adtab4">
+                        <h3>Заказы товаров</h3>
+                    </div>
+                    <div class="tab-pane" id="adtab5">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+</html>

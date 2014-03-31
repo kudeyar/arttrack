@@ -20,7 +20,18 @@ class IndexController extends Zend_Controller_Action
 
     public function supportAction()
     {
-        // action body
+        $sendsupport = new Application_Model_Index();
+        if ($this->getParam('support')) {
+            $name  = trim(htmlspecialchars($this->getParam('name')));
+            $phone  = trim(htmlspecialchars($this->getParam('phone')));
+            $email = trim(htmlspecialchars($this->getParam('email')));
+            $comment  = trim(htmlspecialchars($this->getParam('comment')));
+            if ($name != '' or $phone != '' or $email != '' or $comment != '') {
+                $sendsupport->sendSupport($name, $phone, $email, $comment);
+            } else {
+                return FALSE;
+            }
+        }
     }
 
     public function aboutAction()
@@ -38,18 +49,16 @@ class IndexController extends Zend_Controller_Action
         $this->_helper->layout->disableLayout();
         $telladd = new Application_Model_Index();
         if ($this->getParam('addtell')) {
-            $name = trim(htmlspecialchars($this->getParam('name')));
-            $city = trim(htmlspecialchars($this->getParam('city')));
+            $name  = trim(htmlspecialchars($this->getParam('name')));
+            $city  = trim(htmlspecialchars($this->getParam('city')));
             $phone = trim(htmlspecialchars($this->getParam('phone')));
-            $then = trim(htmlspecialchars($this->getParam('then')));
+            $then  = trim(htmlspecialchars($this->getParam('then')));
             if ($name != '' or $city != '' or $phone != '' or $then != '') {
                 $telladd->addTells($name, $city, $phone, $then);
             } else {
                 return FALSE;
             }
         }
-
-        
     }
 
     public function getcommerceAction()
@@ -57,7 +66,7 @@ class IndexController extends Zend_Controller_Action
         $this->_helper->layout->disableLayout();
         $comadd = new Application_Model_Index();
         if ($this->getParam('addcommerce')) {
-            $name = trim(htmlspecialchars($this->getParam('name')));
+            $name  = trim(htmlspecialchars($this->getParam('name')));
             $email = trim(htmlspecialchars($this->getParam('email')));
             if ($name != '' or $email != '') {
                 $comadd->addCommerce($name, $email);
