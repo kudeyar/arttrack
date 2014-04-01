@@ -26,6 +26,12 @@ class Application_Model_Admin
         return $getSupport;
     }
     
+    public function getNews()
+    {
+        $getSupport = Zend_Db_Table::getDefaultAdapter()->fetchAll("SELECT * FROM `news` ORDER BY id DESC");
+        return $getSupport;
+    }
+    
     public function getCities()
     {
         $getCities = Zend_Db_Table::getDefaultAdapter()->fetchAll("SELECT * FROM `cities` ORDER BY id");
@@ -45,6 +51,19 @@ class Application_Model_Admin
 
         $table->insert($data);
         return Zend_Db_Table::getDefaultAdapter()->lastInsertId('cities');
+    }
+    
+    public function addNews($title, $text, $img = NULL) {
+        $table = new Application_Model_NewsMapper();
+
+        $data = array(
+            'title' => $title,
+            'text' => $text,
+            'img' => $img
+        );
+
+        $table->insert($data);
+        return Zend_Db_Table::getDefaultAdapter()->lastInsertId('news');
     }
 
 }

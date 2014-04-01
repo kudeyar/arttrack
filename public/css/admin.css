@@ -1,4 +1,15 @@
-#add_new_city {
+#add_new_city, #add_new_news {
     display: none;
     margin-top: 10px;
+}
+
+#add_new_news textarea{
+    width: 522px;
+    height: 200px;
+    border: 1px solid #D7D7D7;
+    display: block;
+    resize: none;
+    padding: 10px;
+    font-size: 14px;
+    color: #9f9f9f;
 }
