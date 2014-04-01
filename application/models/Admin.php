@@ -31,6 +31,21 @@ class Application_Model_Admin
         $getCities = Zend_Db_Table::getDefaultAdapter()->fetchAll("SELECT * FROM `cities` ORDER BY id");
         return $getCities;
     }
+    
+    public function addCity($name, $addres, $phone, $email, $yandex) {
+        $table = new Application_Model_CitiesMapper();
+
+        $data = array(
+            'name' => $name,
+            'addres' => $addres,
+            'phone' => $phone,
+            'email' => $email,
+            'yandex' => $yandex
+        );
+
+        $table->insert($data);
+        return Zend_Db_Table::getDefaultAdapter()->lastInsertId('cities');
+    }
 
 }
 
