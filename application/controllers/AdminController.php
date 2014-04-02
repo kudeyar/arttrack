@@ -40,6 +40,7 @@ class AdminController extends Zend_Controller_Action
         if ($this->getParam('addnews')){
             $title  = trim(htmlspecialchars($this->getParam('title')));
             $text  = trim(htmlspecialchars($this->getParam('text')));
+            $img = $this->getParam('img');
             if ($title != '' or $text!='') {
                 $result = $adminService->addNews($title, $text, $img);
                 return $this->_helper->json(array('result' => $result));
