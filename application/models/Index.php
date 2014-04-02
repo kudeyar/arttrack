@@ -21,7 +21,12 @@ class Application_Model_Index {
 
         $table->insert($data);
     }
-    
+    /**
+     * 
+     * @param type $name
+     * @param type $email
+     * отправка заявки на комм. предложение
+     */
     public function addCommerce($name, $email) {
         $table = new Application_Model_CommerceMapper();
 
@@ -32,7 +37,14 @@ class Application_Model_Index {
 
         $table->insert($data);
     }
-    
+    /**
+     * 
+     * @param type $name
+     * @param type $phone
+     * @param type $email
+     * @param type $comment
+     * отправка сообщения в тех поддержку
+     */
     public function sendSupport($name, $phone, $email, $comment) {
         $table = new Application_Model_SupportMapper();
 
@@ -44,6 +56,11 @@ class Application_Model_Index {
         );
 
         $table->insert($data);
+    }
+    
+    public function getCities(){
+        $getCities = Zend_Db_Table::getDefaultAdapter()->fetchAll("SELECT * FROM `cities` ORDER BY id");
+        return $getCities;
     }
     
 }

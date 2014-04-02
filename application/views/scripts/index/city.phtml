@@ -1,0 +1,27 @@
+<a href="" class="getCity">
+    s
+</a>
+
+<div class="city_list">
+    <ul>
+        <? foreach ($this->city as $city) : ?>
+            <li><a href="#" class="setcook" data-id="<?= $city['id']; ?>"><?= $city['name']; ?></a></li>
+            <? endforeach; ?>
+    </ul>
+</div>
+
+<script>
+    $('.getCity').click(function() {
+        $('.city_list').slideToggle();
+        return false;
+    });
+
+    $('.setcook').click(function() {
+        id = $(this).attr('data-id');
+        $.get('/index/city/id/' + id, function(data) {
+            
+        });
+        $('.city_list').slideToggle();
+    })
+
+</script>

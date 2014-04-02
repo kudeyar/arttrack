@@ -12,6 +12,17 @@ class IndexController extends Zend_Controller_Action
     {
         // action body
     }
+    
+    public function cityAction()
+    {
+        $this->_helper->layout->disableLayout();
+        $city = new Application_Model_Index();
+        $this->view->city = $city->getCities();
+        if ($this->getParam('id')){
+            $id = $this->getParam('id');
+            setcookie('id_city', 2, time()+100000);
+        }
+    }
 
     public function dillersAction()
     {

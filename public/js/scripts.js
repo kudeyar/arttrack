@@ -13,3 +13,6 @@ $('.getCall').click(function() {
     $('.form_call').slideToggle();
     return false;
 });
+$.get('/index/city/', function(data) {
+    $('.sel_city').html(data);
+});
