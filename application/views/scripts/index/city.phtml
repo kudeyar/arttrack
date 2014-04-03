@@ -1,11 +1,12 @@
 <a href="" class="getCity">
-    s
+    <?= $this->info_city[0]['name']; ?>
+
 </a>
 
 <div class="city_list">
     <ul>
         <? foreach ($this->city as $city) : ?>
-            <li><a href="#" class="setcook" data-id="<?= $city['id']; ?>"><?= $city['name']; ?></a></li>
+            <li><a href="#" class="setcook" data-id="<?= $city['id']; ?>" data-name="<?= $city['name']; ?>"><?= $city['name']; ?></a></li>
             <? endforeach; ?>
     </ul>
 </div>
@@ -18,10 +19,25 @@
 
     $('.setcook').click(function() {
         id = $(this).attr('data-id');
-        $.get('/index/city/id/' + id, function(data) {
-            
-        });
+        name = $(this).attr('data-name');
+        expires = new Date(); // получаем текущую дату
+        expires.setTime(expires.getTime() + (1000 * 86400 * 365)); // вычисляем срок хранения cookie
+        set_cookie('id_city', id, expires); // устанавливаем cookie с помощью функции set_cookie
         $('.city_list').slideToggle();
+        $('.getCity').html(name);
+        $.get('/index/contacts/', function(data) {
+            $('.contacts').html(data);
+        });
     })
+
+    // уcтанавливает cookie
+    function set_cookie(name, value, expires)
+    {
+        if (!expires)
+        {
+            expires = new Date();
+        }
+        document.cookie = name + "=" + escape(value) + "; expires=" + expires.toGMTString() + "; path=/";
+    }
 
 </script>

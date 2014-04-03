@@ -57,20 +57,19 @@
                     </div>
                     <div class="tab-pane" id="tab4">
                         <p>
-                        <div class="container">
+                        <div class="container" id="full_contacts">
                             <h3>Контакты</h3>
-                            <p><b>Адрес: </b>355029, Ставропольский край, 
-                                г. Ставрополь, ул. Гражданская, д. 8</p>
-                            <p><b>Телефон/факс: </b>8(8652) 92-17-14</p>
-                            <p><b>E-mail: </b>info@art-track.ru</p>
+                            <p><b>Адрес: </b><?= $this->info_city[0]['addres'];?></p>
+                            <p><b>Телефон/факс: </b><?= $this->info_city[0]['phone'];?></p>
+                            <p><b>E-mail: </b><?= $this->info_city[0]['email'];?></p>
                             <p>
-                                <strong>ОГРН:</strong> 1147746108949<br />
-                                <strong>ИНН:</strong> 7720803861<br />
-                                <strong>КПП:</strong> 772001001 <br />
+                                <strong>ОГРН:</strong><?= $this->info_city[0]['ogrn'];?><br />
+                                <strong>ИНН:</strong><?= $this->info_city[0]['inn'];?><br />
+                                <strong>КПП:</strong><?= $this->info_city[0]['kpp'];?><br />
                             </p>
                             <p>
                             <h3>Схема проезда:</h3>
-                            <script type="text/javascript" charset="utf-8" src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=vrioZjgJyioM6HRA-X18f7R4tsy2mkUV&width=600&height=450"></script>
+                            <script type="text/javascript" charset="utf-8" src="<?= $this->info_city[0]['yandex'];?>"></script>
                             </p>
                         </div>
                         </p>

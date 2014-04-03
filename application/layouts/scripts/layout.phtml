@@ -19,7 +19,7 @@
                 <div class="container">
                     <div class="row head_margin">
                         <div class="span2">
-                            <a href="http://178.63.143.252/" class="button_s" target="_blank">Мониторинг</a>
+                            <a href="http://maps.art-track.ru/login_action.html?d=9295" class="button_s" target="_blank">Мониторинг</a>
                         </div>
                         <div class="span4 offset2">
                             <div class="header_phone">8(800) 500-17-14</div>
@@ -48,10 +48,16 @@
                                 'action' => 'about'
                                     ), 'default', true)
                             ?>">О компании</a><div class="main_menu_line"></div><br />
-                            <a href="#">Новости</a><div class="main_menu_line"></div><br />
+                            <a href="<?php
+                            echo $this->url(
+                                    array(
+                                'controller' => 'index',
+                                'action' => 'news'
+                                    ), 'default', true)
+                            ?>">Новости</a><div class="main_menu_line"></div><br />
                             <a href="#" class="getCommerce">Получить коммерческое предложение</a><div class="main_menu_line"></div>
                             <div class="form_commerce">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -76,7 +82,7 @@
                             ?>">Техподдержка</a><div class="main_menu_line"></div><br />
                             <a href="#" class="getCall">Заказать звонок</a><div class="main_menu_line"></div>
                             <div class="form_call">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -282,12 +288,8 @@
                         <a href="/"><img src="../img/logo_footer.png" class="logo_footer" /></a><br />
                         <span style="margin-left: 15px">Copyright &copy; 2014 | <a href="/">art-track.ru</a></span>
                     </div>
-                    <div class="span4">
-                        <h3>Контакты</h3>
-                        <p><b>Адрес: </b>355029, Ставропольский край, 
-                            г. Ставрополь, ул. Гражданская, д. 8</p>
-                        <p><b>Телефон/факс: </b>8(8652) 92-17-14</p>
-                        <p><b>E-mail: </b>info@art-track.ru</p>
+                    <div class="span4 contacts">
+
                     </div>
                     <div class="span4 menu_footer">
                         <ul style="list-style-type: none;">

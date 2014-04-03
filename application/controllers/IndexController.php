@@ -10,7 +10,14 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $news = new Application_Model_Index();
+        $this->view->news = $news->getNews();
+    }
+    
+    public function newsAction()
+    {
+        $news = new Application_Model_Index();
+        $this->view->news = $news->getNews();
     }
     
     public function cityAction()
@@ -18,15 +25,21 @@ class IndexController extends Zend_Controller_Action
         $this->_helper->layout->disableLayout();
         $city = new Application_Model_Index();
         $this->view->city = $city->getCities();
-        if ($this->getParam('id')){
-            $id = $this->getParam('id');
-            setcookie('id_city', 2, time()+100000);
-        }
+        $name_city = isset($_COOKIE['id_city']) ? $_COOKIE['id_city'] : 1;
+        $this->view->info_city = $city->getCity($name_city);
     }
 
     public function dillersAction()
     {
         // action body
+    }
+    
+    public function contactsAction()
+    {
+        $this->_helper->layout->disableLayout();
+        $city = new Application_Model_Index();
+        $name_city = isset($_COOKIE['id_city']) ? $_COOKIE['id_city'] : 1;
+        $this->view->info_city = $city->getCity($name_city);
     }
 
     public function supportAction()
@@ -47,7 +60,9 @@ class IndexController extends Zend_Controller_Action
 
     public function aboutAction()
     {
-        // action body
+        $city = new Application_Model_Index();
+        $name_city = isset($_COOKIE['id_city']) ? $_COOKIE['id_city'] : 1;
+        $this->view->info_city = $city->getCity($name_city);
     }
 
     public function helpbuttonAction()

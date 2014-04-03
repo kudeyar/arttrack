@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="text_block" >
+        <div class="news_block" >
+            <h3 class="title">Новости мира ГЛОНАСС/GPS</h3>
+            <div>
+                <? foreach ($this->news as $news) : ?>
+                    <a href="#">
+                        <div class="news_one" style="float: left; margin-right: 3px;">
+                            <div style="position: relative;">
+                                <img src=".<?= $news['img']; ?>" class="img_n">
+                                <div class="photo_title">
+                                    <p><?= date('d.m.Y', strtotime($news['datetime'])); ?></p>
+                                    <h6><?= $news['title']; ?></h6>
+                                </div>
+                            </div>
+                            <div class="news_text">
+                                <?
+                                $text_news = '';
+                                if (mb_strlen($news['text']) > 300) {
+                                    $text_news = mb_substr($news['text'], 0, 300, 'utf-8') . '...';
+                                } else {
+                                    $text_news = $news['text'];
+                                }
+                                ?>
+                                <?= $text_news; ?>
+                            </div>
+                        </div>
+                    </a>
+                <? endforeach; ?>
+            </div>
+        </div>
+    </div>
+</div>

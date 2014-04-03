@@ -1,3 +1,5 @@
+
+
 <div class="carousel slide" id="myCarousel">
     <ol class="carousel-indicators">
         <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
@@ -61,74 +63,43 @@
 
 <div class="container">
     <div class="news_block" >
-        <h3 class="title">Новости</h3>
-        <a href="#">
-            <div class="news_one">
-                <div style="position: relative;">
-                    <img src="./img/news/tamojgnya-planiruet-ispolzovat-glonass.jpg" class="img_n">
-                    <div class="photo_title">
-                        <p>05.02.2014</p>
-                        <h6>Таможня планирует использовать ГЛОНАСС для отслеживания товаров</h6>
+        <h3 class="title"><a href="<?php
+            echo $this->url(
+                    array(
+                'controller' => 'index',
+                'action' => 'news'
+                    ), 'default', true)
+            ?>">Новости</a></h3>
+            <? $i = 0;
+            foreach ($this->news as $news) :
+                ?>
+    <? if ($i < 4) : ?>
+                <a href="#">
+                    <div class="news_one">
+                        <div style="position: relative;">
+                            <img src="<?= $news['img']; ?>" class="img_n">
+                            <div class="photo_title">
+                                <p><?= date('d.m.Y', strtotime($news['datetime'])); ?></p>
+                                <h6><?= $news['title']; ?></h6>
+                            </div>
+                        </div>
+                        <div class="news_text">
+                            <?
+                            $text_news = '';
+                            if (mb_strlen($news['text']) > 300) {
+                                $text_news = mb_substr($news['text'], 0, 300, 'utf-8') . '...';
+                            } else {
+                                $text_news = $news['text'];
+                            }
+                            ?>
+        <?= $text_news; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="news_text">
-                    Сергей Коноваленко, начальник управления таможенного сотрудничества федеральной таможенной службы России, 
-                    огласил намерения ФТС использовать навигационную спутниковую систему ГЛОНАСС с целью получения данных о 
-                    фактическом товарообороте между Россией и странами Европы. 
-
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="news_one">
-                <div style="position: relative;">
-                    <img src="./img/news/sistemu-glonass-osvaivayut-artileristy.jpg" class="img_n">
-                    <div class="photo_title">
-                        <p>05.02.2014</p>
-                        <h6>Систему ГЛОНАСС осваивают российские артиллеристы</h6>
-
-                    </div>
-                </div>
-                <div class="news_text">
-                    В соответствии с официальными сообщениями от пресс-службы Южного военного округа, 
-                    местные артиллеристы пользуются системой ГЛОНАСС для того, чтобы определять координаты мишеней 
-                    на территории полигона под названием “Прудбой” (Волгоградская область).
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="news_one">
-                <div style="position: relative;">
-                    <img src="./img/news/glonass-pomog-vracham-posle-terakta.jpg" class="img_n">
-                    <div class="photo_title">
-                        <p>05.02.2014</p>
-                        <h6>ГЛОНАСС помог врачам после волгоградского теракта</h6>
-                    </div>
-                </div>
-                <div class="news_text">
-                    29 декабря, после теракта в Волгограде, ГЛОНАСС пришла на помощь водителям машин «Скорой помощи». 
-                    Она передавала данные о том, где сейчас находится врачебный транспорт, таким образом, 
-                    помогая быстро и эффективно определять раненных в нужные больницы.
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="news_one">
-                <div style="position: relative;">
-                    <img src="./img/news/tamojgnya-planiruet-ispolzovat-glonass.jpg" class="img_n">
-                    <div class="photo_title">
-                        <p>05.02.2014</p>
-                        <h6>Таможня планирует использовать ГЛОНАСС для отслеживания товаров</h6>
-                    </div>
-                </div>
-                <div class="news_text">
-                    Сергей Коноваленко, начальник управления таможенного сотрудничества федеральной таможенной службы России, 
-                    огласил намерения ФТС использовать навигационную спутниковую систему ГЛОНАСС с целью получения данных о 
-                    фактическом товарообороте между Россией и странами Европы. 
-
-                </div>
-            </div>
-        </a>
+                </a>
+            <? endif; ?>
+            <? $i++;
+        endforeach;
+        ?>
     </div>
 
     <div class="block_map">
@@ -144,13 +115,6 @@
 </div>
 
 <script>
-    var maxheight = 0;
-    $("div.news_one").each(function() {
-        if ($(this).height() > maxheight) {
-            maxheight = $(this).height() + 10;
-        }
-    });
-    $("div.news_one").height(maxheight);
 
     $(function() {
         $('.carousel').carousel({

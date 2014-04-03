@@ -63,6 +63,16 @@ class Application_Model_Index {
         return $getCities;
     }
     
+    public function getCity($id){
+        $getCity = Zend_Db_Table::getDefaultAdapter()->fetchAll("SELECT * FROM `cities` WHERE id={$id}");
+        return $getCity;
+    }
+    
+    public function getNews(){
+        $getNews = Zend_Db_Table::getDefaultAdapter()->fetchAll("SELECT * FROM `news` ORDER BY id DESC");
+        return $getNews;
+    }
+    
 }
 
 ?>
