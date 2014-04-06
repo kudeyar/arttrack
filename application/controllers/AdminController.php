@@ -36,22 +36,27 @@ class AdminController extends Zend_Controller_Action
                 return FALSE;
             }
         }
-
-        if ($this->getParam('addnews')) {
-            $title = trim(htmlspecialchars($this->getParam('title')));
-            $text = trim(htmlspecialchars($this->getParam('text')));
-            $img = $this->getParam('img');
-            if ($img != '') {
+        
+        if (isset($_POST['addnews'])) {
+            $title = trim(htmlspecialchars($_POST['title']));
+            $text = trim(htmlspecialchars($_POST['text']));
+            $img_n = $_FILES['img']['name'];
+            if ($img_n != '') {
                 $put = "./img/news/";
                 $img = $put . basename($_FILES['img']['name']);
                 copy($_FILES['img']['tmp_name'], $img);
             }
             if ($title != '' or $text != '') {
-                $result = $adminService->addNews($title, $text, $img);
-                return $this->_helper->json(array('result' => $result));
+                $result = $adminService->addNews($title, $text, $img_n);
+//                return $this->_helper->json(array('result' => $result));
             } else {
                 return FALSE;
             }
+        }
+        
+        if ($this->getParam('deletenews')){
+            $id = $this->getParam('id_news');
+            $adminService->deleteNews($id);
         }
     }
 

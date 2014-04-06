@@ -1,31 +1,40 @@
 <div class="container">
     <div class="text_block" >
-        <div class="news_block" >
+        <div class="news_block" style="width: 940px;">
             <h3 class="title">Новости мира ГЛОНАСС/GPS</h3>
             <div>
+                <? $bb = new Application_Model_Index(); ?>
                 <? foreach ($this->news as $news) : ?>
-                    <a href="#">
-                        <div class="news_one" style="float: left; margin-right: 3px;">
-                            <div style="position: relative;">
-                                <img src=".<?= $news['img']; ?>" class="img_n">
-                                <div class="photo_title">
-                                    <p><?= date('d.m.Y', strtotime($news['datetime'])); ?></p>
-                                    <h6><?= $news['title']; ?></h6>
-                                </div>
-                            </div>
-                            <div class="news_text">
-                                <?
-                                $text_news = '';
-                                if (mb_strlen($news['text']) > 300) {
-                                    $text_news = mb_substr($news['text'], 0, 300, 'utf-8') . '...';
-                                } else {
-                                    $text_news = $news['text'];
-                                }
-                                ?>
-                                <?= $text_news; ?>
+                    <div class="news_one" style="float: left; margin-right: 3px;" onclick="location.href = '<?php
+                    echo $this->url(
+                            array(
+                        'controller' => 'index',
+                        'action' => 'newsinfo'
+                            ), 'default', true)
+                    ?>/id/<?= $news['id']; ?>'">
+                        <div style="position: relative;">
+                            <? if ($news['img'] != '') : ?>
+                                <img src="/img/news/<?= $news['img']; ?>" class="img_n">
+                            <? else : ?>
+                                <img src="/img/logo.png" class="img_n">
+                            <? endif; ?>
+                            <div class="photo_title">
+                                <p><?= date('d.m.Y', strtotime($news['datetime'])); ?></p>
+                                <h6><?= $news['title']; ?></h6>
                             </div>
                         </div>
-                    </a>
+                        <div class="news_text">
+                            <?
+                            $text_news = '';
+                            if (mb_strlen($news['text']) > 300) {
+                                $text_news = mb_substr($news['text'], 0, 300, 'utf-8') . '...';
+                            } else {
+                                $text_news = $news['text'];
+                            }
+                            ?>
+                            <?= nl2br($bb->bb_tags($text_news)); ?>
+                        </div>
+                    </div>
                 <? endforeach; ?>
             </div>
         </div>

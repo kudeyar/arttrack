@@ -65,28 +65,47 @@ $('.button_add_news').click(function() {
     if ($form.find('input[name=title]').val() == '') {
         alert('Введите заголовок');
         return false;
-    } else {
-        params.title = $form.find('input[name=title]').val();
     }
     if ($form.find('textarea[name=text]').val() == '') {
         alert('Введите текст новости');
         return false;
-    } else {
-        params.text = $form.find('textarea[name=text]').val();
     }
-    params.img = $form.find('input[name=img]').val();
+    alert('Добавлено');
 
-    params.addnews = 1;
-    $.post('/admin/users/', params, function(result) {
-        $('#add_new_news').slideToggle('fast');
-        $form.find('input[name]').val('');
-        $form.find('textarea[name]').val('');
-        if (result.result) {
-            $table = $('#news');
-            $table.find('tr:first').after('<tr><td>' + result.result + '</td><td>' + params.title + '</td><td>' + params.text + '</td><td>' + params.img + '</td><td><a href="#" class="commerce_delete" title="Удалить"><i class="icon-remove"></i></a></td></tr>');
-            alert('Добавлено');
-        }
-    });
-
-    return false;
 });
+
+// удаление новости
+
+$('.news_delete').click(function() {
+    params.deletenews = 1;
+    params.id_news = $(this).attr('data-id');
+    $.post('/admin/users/', params, function(result) {
+        alert('Удалено');
+    });
+});
+
+$('.button_login').click(function() {
+    $form = $('form');
+    if ($form.find('input[name=login]').val() != 'admin' || $form.find('input[name=pass]').val() != '%arttrack%') {
+        alert('Неправильная пара логин-пароль');
+        return false;
+    } else {
+        admin = $form.find('input[name=login]').val();
+        expires = new Date(); // получаем текущую дату
+        expires.setTime(expires.getTime() + (1000 * 86400 * 0.1)); // вычисляем срок хранения cookie
+        set_cookie('admin', admin, expires); // устанавливаем cookie с помощью функции set_cookie
+    }
+    $.load('/admin/users/');
+
+    //return false;
+});
+
+    // уcтанавливает cookie
+    function set_cookie(name, value, expires)
+    {
+        if (!expires)
+        {
+            expires = new Date();
+        }
+        document.cookie = name + "=" + escape(value) + "; expires=" + expires.toGMTString() + "; path=/";
+    }

@@ -62,7 +62,7 @@
 </div>
 
 <div class="container">
-    <div class="news_block" >
+    <div class="news_block" style="width: 940px;">
         <h3 class="title"><a href="<?php
             echo $this->url(
                     array(
@@ -70,34 +70,47 @@
                 'action' => 'news'
                     ), 'default', true)
             ?>">Новости</a></h3>
-            <? $i = 0;
+            <? $bb = new Application_Model_Index(); ?>
+            <?
+            $i = 0;
             foreach ($this->news as $news) :
                 ?>
-    <? if ($i < 4) : ?>
-                <a href="#">
-                    <div class="news_one">
-                        <div style="position: relative;">
-                            <img src="<?= $news['img']; ?>" class="img_n">
-                            <div class="photo_title">
-                                <p><?= date('d.m.Y', strtotime($news['datetime'])); ?></p>
-                                <h6><?= $news['title']; ?></h6>
-                            </div>
-                        </div>
-                        <div class="news_text">
-                            <?
-                            $text_news = '';
-                            if (mb_strlen($news['text']) > 300) {
-                                $text_news = mb_substr($news['text'], 0, 300, 'utf-8') . '...';
-                            } else {
-                                $text_news = $news['text'];
-                            }
-                            ?>
-        <?= $text_news; ?>
+                <? if ($i < 4) : ?>
+
+                <div class="news_one" style="float: left; margin-right: 3px;" onclick="location.href = '<?php
+                echo $this->url(
+                        array(
+                    'controller' => 'index',
+                    'action' => 'newsinfo'
+                        ), 'default', true)
+                ?>/id/<?= $news['id']; ?>'">
+                    <div style="position: relative;">
+                        <? if ($news['img'] != '') : ?>
+                            <img src="./img/news/<?= $news['img']; ?>" class="img_n">
+                        <? else : ?>
+                            <img src="/img/logo.png" class="img_n">
+                        <? endif; ?>
+                        <div class="photo_title">
+                            <p><?= date('d.m.Y', strtotime($news['datetime'])); ?></p>
+                            <h6><?= $news['title']; ?></h6>
                         </div>
                     </div>
-                </a>
+                    <div class="news_text">
+                        <?
+                        $text_news = '';
+                        if (mb_strlen($news['text']) > 300) {
+                            $text_news = mb_substr($news['text'], 0, 300, 'utf-8') . '...';
+                        } else {
+                            $text_news = $news['text'];
+                        }
+                        ?>
+                        <?= nl2br($bb->bb_tags($text_news)); ?>
+                    </div>
+                </div>
+
             <? endif; ?>
-            <? $i++;
+            <?
+            $i++;
         endforeach;
         ?>
     </div>
@@ -105,10 +118,12 @@
     <div class="block_map">
         <div class="moscow">Москва</div>
         <div class="moscow_info">
+            <a href="/index/about" class="set_city2"><strong>Центральный офис</strong></a>
             <address><em>г. Москва, Шоссе Энтузиастов, 56 стр.44</em></address>
         </div>
         <div class="stav">Ставрополь</div>
         <div class="stav_info">
+            <a href="/index/about" class="set_city1"><strong>Филиал в г.Ставрополь</strong></a>
             <address><em>г. Ставрополь, ул. Гражданская, д. 8</em></address>
         </div>
     </div>
@@ -122,12 +137,38 @@
         });
     });
 
-    $('.moscow').hover(function() {
-        $('.moscow_info').toggle('slow');
+    $('.moscow').mouseenter(function() {
+        $('.moscow').animate({fontSize: "3em"}, 100, function() {
+            $('.moscow_info').css('display', 'block');
+        });
+    });
+    $('.moscow_info').mouseleave(function() {
+        $('.moscow').animate({fontSize: "1em"}, 100);
+        $('.moscow_info').css('display', 'none');
     });
 
-    $('.stav').hover(function() {
-        $('.stav_info').toggle('slow');
+    $('.stav').mouseenter(function() {
+        $('.stav').animate({fontSize: "3em"}, 100, function() {
+            $('.stav_info').css('display', 'block');
+        });
     });
+    $('.stav_info').mouseleave(function() {
+        $('.stav').animate({fontSize: "1em"}, 100);
+        $('.stav_info').css('display', 'none');
+    });
+
+    $('.set_city2').click(function() {
+        id = 2;
+        expires = new Date(); // получаем текущую дату
+        expires.setTime(expires.getTime() + (1000 * 86400 * 365)); // вычисляем срок хранения cookie
+        set_cookie('id_city', id, expires); // устанавливаем cookie с помощью функции set_cookie
+    });
+
+    $('.set_city1').click(function() {
+        id = 1;
+        expires = new Date(); // получаем текущую дату
+        expires.setTime(expires.getTime() + (1000 * 86400 * 365)); // вычисляем срок хранения cookie
+        set_cookie('id_city', id, expires); // устанавливаем cookie с помощью функции set_cookie
+    })
 </script>
 

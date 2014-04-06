@@ -213,6 +213,7 @@ h3, h4, h5 {
     color: #333333;
     text-align: center;
     margin-bottom: 20px;
+    display: inline-block;
 }
 
 .news_one {
@@ -247,6 +248,7 @@ h3, h4, h5 {
 
 .news_one:hover {
     display: inline-block;
+    cursor: pointer;
     /* Webkit (Safari/Chrome) */ -webkit-box-shadow: 0px 4px 5px 2px #CCCCCC;
     /* Mozilla Firefox */ -moz-box-shadow: 0px 4px 5px 2px #CCCCCC;
     /* Proposed W3C Markup */ box-shadow: 0px 4px 5px 2px #CCCCCC;
@@ -350,11 +352,12 @@ h3, h4, h5 {
     display: none;
     background: rgba(255, 255, 255, 0.8);
     position: absolute;
-    top: 278px;
-    left: 95px;
+    top: 240px;
+    left: 85px;
     height: 50px;
     width: 180px;
     padding: 10px;
+    border: 1px solid #df8505;
 }
 
 .stav{
@@ -372,11 +375,17 @@ h3, h4, h5 {
     display: none;
     background: rgba(255, 255, 255, 0.8);
     position: absolute;
-    top: 392px;
-    left: 40px;
+    top: 355px;
+    left: 30px;
     height: 50px;
     width: 180px;
     padding: 10px;
+    border: 1px solid #df8505;
+}
+
+.stav_info a, .moscow_info a {
+    color: black;
+    text-decoration: dotted !important;
 }
 /******************end dillers**************************/
 
@@ -442,8 +451,9 @@ h3, h4, h5 {
 
 .trackers {
     display: inline-block;
+    position: relative;
     width: 224px;
-    min-height: 280px;
+    min-height: 300px;
     background: transparent;
     text-align: left;
     vertical-align: top;
@@ -542,6 +552,10 @@ h3, h4, h5 {
     border-top-color: #19242b;
     background: #19242b;
 }
+/*.buttons {
+    position: absolute;
+    bottom: 0px;
+}*/
 .buttons a{
     color: white;
 }
@@ -682,6 +696,8 @@ h3, h4, h5 {
 .img_uslugi_info{
     float: left;
     margin-right: 10px;
+    width: 305px;
+    height: 230px;
 }
 
 .vopros {

@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="text_block" >
+        <h3 class="title"><?= $this->newsinfo[0]['title']; ?></h3>
+        <div class="text_caption">
+            <? if ($this->newsinfo[0]['img'] != '') : ?>
+                <img src="/img/news/<?= $this->newsinfo[0]['img']; ?>" class="all_img">
+            <? endif; ?>
+            <p>
+                <? $bb = new Application_Model_Index(); ?>
+                <?= nl2br($bb->bb_tags($this->newsinfo[0]['text'])); ?>
+            </p>
+        </div>
+
+    </div>
+</div>

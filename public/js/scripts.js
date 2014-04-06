@@ -28,3 +28,13 @@ $("div.news_one").each(function() {
     }
 });
 $("div.news_one").height(maxheight);
+
+// уcтанавливает cookie
+function set_cookie(name, value, expires)
+{
+    if (!expires)
+    {
+        expires = new Date();
+    }
+    document.cookie = name + "=" + escape(value) + "; expires=" + expires.toGMTString() + "; path=/";
+}
