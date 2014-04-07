@@ -4,14 +4,13 @@
         <div class="text_caption">
             <div class="tabbable"> <!-- Only required for left/right tabs -->
                 <ul class="nav nav-tabs">
-                    <li><a href="#tab1" data-toggle="tab">О нас</a></li>
+                    <li class="active"><a href="#tab1" data-toggle="tab">О нас</a></li>
                     <li><a href="#tab2" data-toggle="tab">Отзывы</a></li>
                     <li><a href="#tab3" data-toggle="tab">Акции</a></li>
-                    <li class="active"><a href="#tab4" data-toggle="tab">Контакты</a></li>
                     <li><a href="#tab5" data-toggle="tab">Вакансии</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane " id="tab1">
+                    <div class="tab-pane active" id="tab1">
                         <p>
                         <div class="container">
                             <img src="/img/logo_footer.png" style="width: 200px;" class="all_img">
@@ -63,30 +62,12 @@
                             <p>Сроки проведения: с 01.01.2014 по 01.09.2014</p>
 
                             <p>Условия акции: При наличии в автопарке КЛИЕНТА транспортных средств более 20 шт., оборудование ГЛОНАСС/GPS предоставляется БЕСПЛАТНО.*</p>
-                                <br />
+                            <br />
                             <p>*- подробности уточняйте у менеджеров компании «АРТ-ТРЭК»</p>
                         </div>
                         </p>
                     </div>
-                    <div class="tab-pane active" id="tab4">
-                        <p>
-                        <div class="container" id="full_contacts">
-                            <h3>Контакты</h3>
-                            <p><b>Адрес: </b><?= $this->info_city[0]['addres']; ?></p>
-                            <p><b>Телефон/факс: </b><?= $this->info_city[0]['phone']; ?></p>
-                            <p><b>E-mail: </b><?= $this->info_city[0]['email']; ?></p>
-                            <p>
-                                <strong>ОГРН:</strong><?= $this->info_city[0]['ogrn']; ?><br />
-                                <strong>ИНН:</strong><?= $this->info_city[0]['inn']; ?><br />
-                                <strong>КПП:</strong><?= $this->info_city[0]['kpp']; ?><br />
-                            </p>
-                            <p>
-                            <h3>Схема проезда:</h3>
-                            <script type="text/javascript" charset="utf-8" src="<?= $this->info_city[0]['yandex']; ?>"></script>
-                            </p>
-                        </div>
-                        </p>
-                    </div>
+
                     <div class="tab-pane" id="tab5">
                         <p>
                         <div class="container">
