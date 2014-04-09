@@ -506,6 +506,7 @@ h3, h4, h5 {
     display: inline-block;
     margin: 2px 5px;
     min-width: 60px;
+    text-align: center;
 }
 .button_s:hover {
     border-top-color: #28597a;
@@ -543,6 +544,7 @@ h3, h4, h5 {
     display: inline-block;
     margin: 2px 5px;
     min-width: 60px;
+    text-align: center;
 }
 .button_b:hover {
     border-top-color: #303030;

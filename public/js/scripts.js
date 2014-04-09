@@ -33,6 +33,13 @@ $("div.news_one").each(function() {
 });
 $("div.news_one").height(maxheight);
 
+$("div.trackers").each(function() {
+    if ($(this).height() > maxheight) {
+        maxheight = $(this).height() + 10;
+    }
+});
+$("div.trackers").height(maxheight);
+
 // уcтанавливает cookie
 function set_cookie(name, value, expires)
 {
@@ -42,3 +49,5 @@ function set_cookie(name, value, expires)
     }
     document.cookie = name + "=" + escape(value) + "; expires=" + expires.toGMTString() + "; path=/";
 }
+
+

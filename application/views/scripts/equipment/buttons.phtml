@@ -1,24 +1,20 @@
 <a href="#" class="button_b">Купить</a>
-<a href="#myModal" class="button_s price" data-toggle="modal">Цена1</a>
+<a href="#" class="button_s price" data-toggle="modal">Цена</a>
 
-<div class="modal" id="myModal">
-    <div class="modal-body" role="text">
-        <div class="message"></div>
-        <div class="file"></div>
-        <div class="user"></div>
-        <div class="request">
-            <h4>Запрос:</h4>
-            <div class="uri"></div>
-            <pre class="params"></pre>
-        </div>
-        <h4>Trace:</h4>
-        <pre class="trace"></pre>
-        <a href="#" class="btn btn-danger">Закрыть</a>
+<div class="modal hide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 300px; top: 30%; left: 57%;">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Получить прайс-лист</h3>
+    </div>
+    <div class="modal-body">
+        <form method="POST">
+            <label><input type="email" name="email" placeholder="Введите Ваш Email" required></label>
+            <a href="#" class="button_s send_price">Получить прайс-лист</a>
+        </form>
     </div>
 </div>
 
 <script>
-    var l;
     $(function() {
         $('#myModal').modal({
             keyboard: false
@@ -27,14 +23,28 @@
         $('#myModal').modal('show');
         $('#myModal').modal('hide');
 
-        $('#myModal .btn').click(function() {
-            $('#myModal').hide()
-        })
-        $('.showMoreInfo').click(function() {
-            $('#myModal').show()
+        $('.price').click(function() {
+            $('#myModal').modal('show');
             return false;
         });
     });
 
+    var params = {};
+    $('.send_price').click(function() {
+        $form = $('form');
+        if ($form.find('input[name=email]').val() == '') {
+            alert('Введите email');
+            return false;
+        } else {
+            params.email = $form.find('input[name=email]').val();
+        }
+        params.sendcom = 1;
+        $.post('/equipment/buttons/', params, function(data) {
+            $form.find('input[name]').val('');
+            alert('Посмотрите вашу почту');
+            $('#myModal').modal('hide');
+        });
 
+        return false;
+    });
 </script>
