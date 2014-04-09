@@ -48,6 +48,7 @@ class AdminController extends Zend_Controller_Action
             }
             if ($title != '' or $text != '') {
                 $result = $adminService->addNews($title, $text, $img_n);
+                echo "<script language='javascript'>location.href='/admin/users/'</script>";
 //                return $this->_helper->json(array('result' => $result));
             } else {
                 return FALSE;

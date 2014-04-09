@@ -17,6 +17,10 @@ $.get('/index/city/', function(data) {
     $('.sel_city').html(data);
 });
 
+$.get('/equipment/buttons/', function(data) {
+    $('.buttons').html(data);
+});
+
 $.get('/index/contacts/', function(data) {
     $('.contacts').html(data);
 });

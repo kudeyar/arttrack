@@ -1,0 +1,40 @@
+<a href="#" class="button_b">Купить</a>
+<a href="#myModal" class="button_s price" data-toggle="modal">Цена1</a>
+
+<div class="modal" id="myModal">
+    <div class="modal-body" role="text">
+        <div class="message"></div>
+        <div class="file"></div>
+        <div class="user"></div>
+        <div class="request">
+            <h4>Запрос:</h4>
+            <div class="uri"></div>
+            <pre class="params"></pre>
+        </div>
+        <h4>Trace:</h4>
+        <pre class="trace"></pre>
+        <a href="#" class="btn btn-danger">Закрыть</a>
+    </div>
+</div>
+
+<script>
+    var l;
+    $(function() {
+        $('#myModal').modal({
+            keyboard: false
+        });
+        $('#myModal').modal('toggle');
+        $('#myModal').modal('show');
+        $('#myModal').modal('hide');
+
+        $('#myModal .btn').click(function() {
+            $('#myModal').hide()
+        })
+        $('.showMoreInfo').click(function() {
+            $('#myModal').show()
+            return false;
+        });
+    });
+
+
+</script>

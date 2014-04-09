@@ -13,6 +13,11 @@ class EquipmentController extends Zend_Controller_Action
         // action body
     }
     
+    public function buttonsAction()
+    {
+        $this->_helper->layout->disableLayout();
+    }
+    
     public function trackerAction()
     {
         // action body

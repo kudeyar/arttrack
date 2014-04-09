@@ -33,13 +33,13 @@
             <form method="post">
                 <div class="control-group">
                     <div class="controls">
-                        <label><input type="text" placeholder="ФИО" required></label>
+                        <label><input type="text" name="fio" placeholder="ФИО" required></label>
                     </div>
                     <div class="controls">
-                        <label><input type="text" placeholder="Компания" required></label>
+                        <label><input type="text" name="company" placeholder="Компания" required></label>
                     </div>
                     <div class="controls">
-                        <select>
+                        <select name="otrasl">
                             <option>Отрасль</option>
                             <option>Транспорт</option>
                             <option>Логистика</option>
@@ -53,7 +53,7 @@
                         </select>
                     </div>
                     <div class="controls">
-                        <select>
+                        <select name="count_ts">
                             <option>Количество транспортных средств</option>
                             <option>меньше 10</option>
                             <option>10-50</option>
@@ -63,16 +63,16 @@
                         </select>
                     </div>
                     <div class="controls">
-                        <label><input type="text" placeholder="Город" required></label>
+                        <label><input type="text" name="city" placeholder="Город" required></label>
                     </div>
                     <div class="controls">
-                        <label><input type="text" placeholder="Телефон" required></label>
+                        <label><input type="text" name="phone" placeholder="Телефон" required></label>
                     </div>
                     <div class="controls">
-                        <label><input type="email" placeholder="Ваш e-mail" required></label>
+                        <label><input type="email" name="email" placeholder="Ваш e-mail" required></label>
                     </div>
                     <div class="controls">
-                        <label style="margin-left: 50px;" class="buttons"><a href="#" class="button_s">Отправить</a></label>
+                        <label style="margin-left: 50px;" class="buttons"><a href="#" class="button_s send_retr">Отправить</a></label>
                     </div>
                 </div>
             </form>
@@ -80,3 +80,60 @@
 
     </div>
 </div>
+
+<script>
+    var params = {};
+    $('.set_order').click(function() {
+        $form = $('form');
+        if ($form.find('input[name=fio]').val() == '') {
+            alert('Введите имя');
+            return false;
+        } else {
+            params.fio = $form.find('input[name=fio]').val();
+        }
+        if ($form.find('input[name=company]').val() == '') {
+            alert('Введите компанию');
+            return false;
+        } else {
+            params.company = $form.find('input[name=company]').val();
+        }
+        if ($form.find('select[name=otrasl]').val() == 'Отрасль') {
+            alert('Выберите отрасль');
+            return false;
+        } else {
+            params.otrasl = $form.find('input[name=otrasl]').val();
+        }
+        if ($form.find('select[name=count_ts]').val() == 'Количество транспортных средств') {
+            alert('Выберите количество ТС');
+            return false;
+        } else {
+            params.count_ts = $form.find('input[name=count_ts]').val();
+        }
+        if ($form.find('input[name=city]').val() == '') {
+            alert('Введите город');
+            return false;
+        } else {
+            params.city = $form.find('input[name=city]').val();
+        }
+        if ($form.find('input[name=phone]').val() == '') {
+            alert('Введите телефон');
+            return false;
+        } else {
+            params.phone = $form.find('input[name=phone]').val();
+        }
+        if ($form.find('input[name=email]').val() == '') {
+            alert('Введите email');
+            return false;
+        } else {
+            params.email = $form.find('input[name=email]').val();
+        }
+        params.addretrans = 1;
+        $.post('/uslugi/retranslyator/', params, function(data) {
+            $form.find('input[name]').val('');
+            alert('Спасибо, ваша заявка принята');
+        });
+
+        return false;
+    });
+
+</script>
