@@ -52,6 +52,41 @@ class EquipmentController extends Zend_Controller_Action
                 return FALSE;
             }
         }
+        
+        if ($this->getParam('sendbuy')) {
+            $name    = trim(htmlspecialchars($this->getParam('name')));
+            $phone   = trim(htmlspecialchars($this->getParam('phone')));
+            $count   = trim(htmlspecialchars($this->getParam('count')));
+            $city = trim(htmlspecialchars($this->getParam('city')));
+            $tovar1 = trim(htmlspecialchars($this->getParam('tovar')));
+            $tovar = str_replace('&lt;br&gt;', '', $tovar1);
+            if ($name != '' or $phone != '' or $count != '' or $city != '') {
+//                $sendsupport->sendSupport($name, $phone, $email, $comment);
+                $to      = "info@art-track.ru";
+                $subject = "Заказ товара";
+                $message = " 
+                        <html> 
+                            <head> 
+                                <title>Заказ товара: {$tovar}</title> 
+                            </head> 
+                            <body> 
+                                <p>
+                                    Имя: {$name} <br />
+                                    Телефон: {$phone} <br />
+                                    Город: {$city}  <br />
+                                    Товар: {$tovar}  <br />
+                                    Количество: {$count}
+                                </p> 
+                            </body> 
+                        </html>";
+
+                $headers = "Content-type: text/html; charset=utf-8 \r\n";
+
+                mail($to, $subject, $message, $headers);
+            } else {
+                return FALSE;
+            }
+        }
     }
 
     public function trackerAction()

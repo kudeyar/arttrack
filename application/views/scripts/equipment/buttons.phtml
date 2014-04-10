@@ -1,4 +1,4 @@
-<a href="#" class="button_b">Купить</a>
+<a href="#" class="button_b buy">Купить</a>
 <a href="#" class="button_s price" data-toggle="modal">Цена</a>
 
 <div class="modal hide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 300px; top: 30%; left: 57%;">
@@ -7,9 +7,25 @@
         <h3 id="myModalLabel">Получить прайс-лист</h3>
     </div>
     <div class="modal-body">
-        <form method="POST">
+        <form method="POST" id="price_form">
             <label><input type="email" name="email" placeholder="Введите Ваш Email" required></label>
             <a href="#" class="button_s send_price">Получить прайс-лист</a>
+        </form>
+    </div>
+</div>
+
+<div class="modal hide" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 300px; top: 30%; left: 57%;">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Заказать товар</h3>
+    </div>
+    <div class="modal-body">
+        <form method="POST" id="buy_form">
+            <label><input type="text" name="count" placeholder="Введите количество" required></label>
+            <label><input type="text" name="name" placeholder="Введите Ваше имя" required></label>
+            <label><input type="text" name="city" placeholder="Введите город" required></label>
+            <label><input type="text" name="phone" placeholder="Введите телефон" required></label>
+            <a href="#" class="button_s send_buy">Заказать</a>
         </form>
     </div>
 </div>
@@ -27,11 +43,23 @@
             $('#myModal').modal('show');
             return false;
         });
+
+        $('#myModal2').modal({
+            keyboard: false
+        });
+        $('#myModal2').modal('toggle');
+        $('#myModal2').modal('show');
+        $('#myModal2').modal('hide');
+
+        $('.buy').click(function() {
+            $('#myModal2').modal('show');
+            return false;
+        });
     });
 
     var params = {};
     $('.send_price').click(function() {
-        $form = $('form');
+        $form = $('#price_form');
         if ($form.find('input[name=email]').val() == '') {
             alert('Введите email');
             return false;
@@ -47,4 +75,43 @@
 
         return false;
     });
+
+    $('.buy').click(function() {
+        $tracker = $(this).parents('.tracker_text');
+        params.tovar = $tracker.find('a').html();
+    });
+    $('.send_buy').click(function() {
+        $form = $('#buy_form');
+        if ($form.find('input[name=count]').val() == '') {
+            alert('Введите количество');
+            return false;
+        } else {
+            params.count = $form.find('input[name=count]').val();
+        }
+        if ($form.find('input[name=name]').val() == '') {
+            alert('Введите имя');
+            return false;
+        } else {
+            params.name = $form.find('input[name=name]').val();
+        }
+        if ($form.find('input[name=city]').val() == '') {
+            alert('Введите город');
+            return false;
+        } else {
+            params.city = $form.find('input[name=city]').val();
+        }
+        if ($form.find('input[name=phone]').val() == '') {
+            alert('Введите телефон');
+            return false;
+        } else {
+            params.phone = $form.find('input[name=phone]').val();
+        }
+        params.sendbuy = 1;
+        $.post('/equipment/buttons/', params, function(data) {
+            $form.find('input[name]').val('');
+            alert('Спасибо за заказ. Мы Вам перезвоним');
+            $('#myModal2').modal('hide');
+        });
+        return false;
+    })
 </script>
