@@ -19,9 +19,19 @@ class EquipmentController extends Zend_Controller_Action
         $send = new Application_Model_Index();
         if ($this->getParam('sendcom')) {
             $email    = trim(htmlspecialchars($this->getParam('email')));
-            $filename = "./docs/price.pdf"; //Имя файла для прикрепления
+            $filename = "./docs/priceANDcommerce.zip"; //Имя файла для прикрепления
             $subject  = "Прайс-лист предоставляемых товаров"; //Тема
-            $message  = "Прайс-лист предоставляемых товаров"; //Текст письма
+            $message  = "Благодарим Вас за интерес, проявленный к нашей компании!<br />
+			Во вложении Вы можете ознакомиться с информацией о компании и ценах.<br />
+			Для составления более точного расчета цены и сроков поставки, Вы можете уточнить по единому номеру 8 (800) 500 17 14<br />
+			<br /><br />
+			С уважением, Группа компаний 'АРТ-ТРЭК' <br />
+			Тел.: (8652) 92-17-14<br />
+			8-800-500-17-14<br />
+			г. Ставрополь, ул. Гражданская, д. 8<br />
+			E-mail: info@art-track.ru<br />
+			www.art-track.ru<br />
+			"; //Текст письма
             if ($email != '') {
                 $to       = $email; //Кому
                 $from     = "info@art-track.ru"; //От кого
@@ -59,7 +69,7 @@ class EquipmentController extends Zend_Controller_Action
             $count   = trim(htmlspecialchars($this->getParam('count')));
             $city = trim(htmlspecialchars($this->getParam('city')));
             $tovar1 = trim(htmlspecialchars($this->getParam('tovar')));
-            $tovar = str_replace('&lt;br&gt;', '', $tovar1);
+			$tovar = str_replace('&lt;br&gt;', '', $tovar1);
             if ($name != '' or $phone != '' or $count != '' or $city != '') {
 //                $sendsupport->sendSupport($name, $phone, $email, $comment);
                 $to      = "info@art-track.ru";
@@ -184,6 +194,12 @@ class EquipmentController extends Zend_Controller_Action
         // action body
     }
 
+    public function dut4Action()
+    {
+        // action body
+    }
+
+    
     public function kursoroukazatel1Action()
     {
         // action body

@@ -148,9 +148,18 @@ class IndexController extends Zend_Controller_Action
         if ($this->getParam('addcommerce')) {
             $name     = trim(htmlspecialchars($this->getParam('name')));
             $email    = trim(htmlspecialchars($this->getParam('email')));
-            $filename = "./docs/commerce.pdf"; //Имя файла для прикрепления
+            $filename = "./docs/priceANDcommerce.zip"; //Имя файла для прикрепления
             $subject  = "Коммерческое предложение"; //Тема
-            $message  = "Коммерческое предложение"; //Текст письма
+            $message  = "Благодарим Вас за интерес, проявленный к нашей компании!<br />
+			Во вложении Вы можете ознакомиться с информацией о компании и ценах.<br />
+			Для составления более точного расчета цены и сроков поставки, Вы можете уточнить по единому номеру 8 (800) 500 17 14<br />
+			<br /><br />
+			С уважением, Группа компаний 'АРТ-ТРЭК' <br />
+			Тел.: (8652) 92-17-14<br />
+			8-800-500-17-14<br />
+			г. Ставрополь, ул. Гражданская, д. 8<br />
+			E-mail: info@art-track.ru<br />
+			www.art-track.ru<br />"; //Текст письма
             if ($name != '' or $email != '') {
 //                $comadd->addCommerce($name, $email);
                 $send->sendEmail($email, $subject, $message, $filename);
@@ -159,5 +168,32 @@ class IndexController extends Zend_Controller_Action
             }
         }
     }
+    
+    public function hbutton1Action()
+    {
+        // action body
+    }
+    
+    public function hbutton2Action()
+    {
+        // action body
+    }
+    
+    public function hbutton3Action()
+    {
+        // action body
+    }
+    
+    public function hbutton4Action()
+    {
+        // action body
+    }
+    
+    public function hbutton5Action()
+    {
+        // action body
+    }
+    
+    
 
 }
