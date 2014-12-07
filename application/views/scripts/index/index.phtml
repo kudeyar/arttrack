@@ -170,5 +170,15 @@
         expires.setTime(expires.getTime() + (1000 * 86400 * 365)); // вычисляем срок хранения cookie
         set_cookie('id_city', id, expires); // устанавливаем cookie с помощью функции set_cookie
     })
+	
+	function set_cookie(name, value, expires)
+    {
+        if (!expires)
+        {
+            expires = new Date();
+        }
+        document.cookie = name + "=" + escape(value) + "; expires=" + expires.toGMTString() + "; path=/";
+    }
+
 </script>
 

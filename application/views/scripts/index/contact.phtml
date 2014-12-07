@@ -5,6 +5,9 @@
             <p><b>Адрес: </b><?= $this->info_city[0]['addres']; ?></p>
             <p><b>Телефон/факс: </b><?= $this->info_city[0]['phone']; ?></p>
             <p><b>E-mail: </b><?= $this->info_city[0]['email']; ?></p>
+			<? if ($this->info_city[0]['id'] == 2) : ?>
+				<p><b>ICQ: </b>665140899</p>
+			<? endif; ?>
             <p>
                 <strong>ОГРН:</strong><?= $this->info_city[0]['ogrn']; ?><br />
                 <strong>ИНН:</strong><?= $this->info_city[0]['inn']; ?><br />
